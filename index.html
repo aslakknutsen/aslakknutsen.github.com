@@ -12,6 +12,7 @@
       /*]]>*/
     </style>
     <link href='/stylesheets/styles.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/prettify.css' rel='stylesheet' type='text/css' />
     <!--[if lt IE 9]>
       <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
     <![endif]-->
@@ -68,7 +69,7 @@
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
     <script src='/javascripts/prettify.js' type='text/javascript'></script>
     <script type='text/javascript'>
-      $(window).load(function() { $('code').addClass('prettify').addClass('lang-ruby'); prettify() })
+      $(window).load(function() { $('pre>code').addClass('prettify').addClass('lang-ruby').parent().addClass('prettify').addClass('lang-ruby'); prettify() })
     </script>
   </body>
 </html>
