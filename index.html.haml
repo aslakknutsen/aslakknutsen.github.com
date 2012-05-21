@@ -6,13 +6,7 @@ title: 'An awesome site'
   %h1 Welcome
   %p 
 .row
-  .span4
-    %h2 About
-    %p Senior Software Engineer at JBoss by Red Hat, Arquillian Project Lead.
-  .span4
-    %h2 Stuff
-    %p
-  .span4
+  .span8
     %h2 Blog
     %ul
       - for post in site.posts[0,3]
@@ -25,3 +19,6 @@ title: 'An awesome site'
             - text = html_to_text(cut_at ? post.content[0, cut_at] : post.content)
             -# might want to use 'white-space: pre-line;' here
             %p<= text[0..text.index(/[\.\!]( |$)/, [text.index(/[\.\!]( |$)/) + 1, text.length - 1].min)] + '...'
+  .span4
+    %h2 About
+    %p Senior Software Engineer at JBoss by Red Hat, Arquillian Project Lead.

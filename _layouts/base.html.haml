@@ -8,17 +8,16 @@
       body {
         padding-top: 60px;
       }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/styles.css" }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"/stylesheets/styles.css" }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"/stylesheets/prettify.css" }
     /[if lt IE 9]
       %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          %a.brand{ :href=>"#{site.base_url}" } Aslak Knutsen
+          %a.brand{ :href=>"/" } Aslak Knutsen
           %ul.nav
-            %li
-              %a{ :href=>"#{site.base_url}" } Home
             %li
               %a{ :href=>"/blog" } Blog
     .container
@@ -31,5 +30,5 @@
     -# %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/bootstrap-collapse.js" }
     %script{ :type=>'text/javascript', :src=> '/javascripts/prettify.js'}
     %script{ :type=>'text/javascript'}
-      $(window).load(function() { $('code').addClass('prettify').addClass('lang-ruby'); prettify() })
+      $(window).load(function() { $('pre>code').addClass('prettify').parent().addClass('prettify'); prettify() })
       
