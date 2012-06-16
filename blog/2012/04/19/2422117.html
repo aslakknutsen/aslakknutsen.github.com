@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>How to import your project's history in Sonar</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body {
+          padding-top: 60px;
+        }
+      /*]]>*/
+    </style>
+    <link href='/stylesheets/styles.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/prettify.css' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='brand' href='/'>Aslak Knutsen</a>
+          <ul class='nav'>
+            <li>
+              <a href='/blog'>Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <h2>How to import your project's history in Sonar</h2>
+
+<p>When you do your first <a href="http://sonarsource.org">Sonar</a> run on your project, you get a lot of new quality numbers to play with, but no trends. You only have one data set for comparison, the now picture.</p>
+
+<p>Wouldn't it be nice if you could see the current trend of the project without waiting a couple of month for the 'daily/weekly' Sonar runs to fill up the data? Well, you're in luck! And if you're using git as a version system as well, this is your day. :)</p>
+
+<p>In the <a href="http://docs.codehaus.org/display/SONAR/Advanced+parameters">Sonar Advanced Parameter</a> documentation you will find a System Property called <em>sonar.projectDate</em>. The property let you tell Sonar when in time the running analysis was ran.</p>
+
+<p>By combining this property and what your version system does best, track changes to source, we can now play back the history of the project as far as Sonar is concerned.</p>
+
+<p>This little Bash script illustrates the concept. To spell out what it does in human readable form:</p>
+
+<blockquote><p>for each tag in the given git repository, checkout the source and run sonar, using the tag date as projectDate</p></blockquote>
+
+<pre><code>GIT_REPO=$1&#x000A;START_TAG=$2&#x000A;&#x000A;MVN_COMMAND="mvn clean install"&#x000A;SONAR_COMMAND="mvn org.codehaus.sonar:sonar-maven3-plugin:3.0:sonar"&#x000A;&#x000A;if [ -z "$GIT_REPO" ]; then&#x000A;    echo "Missing program argument: repository"&#x000A;    echo "Usage: ./sonar_history.sh git_repository_path [start-tag]"&#x000A;    exit&#x000A;fi&#x000A;&#x000A;pushd $GIT_REPO&#x000A;for tag in `git tag`&#x000A;do&#x000A;    if [[ -n "$START_TAG" &amp;&amp; "$START_TAG" &gt; "$tag" ]] ; then&#x000A;        echo "Skipping $tag (start tag $START_TAG)"&#x000A;        continue&#x000A;    fi&#x000A;&#x000A;    TAG_DATE=`git show $tag --date=iso | grep Date: -m1 | cut -d' ' -f 4`&#x000A;    echo "Checking out source from $TAG_DATE tagged as $tag"&#x000A;    git checkout $tag  &gt; /dev/null 2&gt;&amp;1&#x000A;    git clean -df &gt; /dev/null 2&gt;&amp;1&#x000A;&#x000A;    SONAR_PROJECT_COMMAND="$SONAR_COMMAND -Dsonar.projectDate=$TAG_DATE"&#x000A;&#x000A;    echo "Executing Maven: $MVN_COMMAND"&#x000A;    $MVN_COMMAND &gt; /dev/null 2&gt;&amp;1&#x000A;    echo "Executing Sonar: $SONAR_PROJECT_COMMAND"&#x000A;    $SONAR_PROJECT_COMMAND &gt; /dev/null 2&gt;&amp;1&#x000A;done&#x000A;popd&#x000A;</code></pre>
+
+<p>You can of course modify this script to fit your own need. Maybe you want to checkout the history pr week or pr month instead of using tags. It's up to you.</p>
+
+<p>Have fun! :)</p>
+      <hr />
+      <footer>
+        <p>&copy; Aslak Knutsen 2012</p>
+      </footer>
+    </div>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      $(window).load(function() { $('pre>code').addClass('prettify').parent().addClass('prettify'); prettify() })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>How To LiveReload with Awestruct</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body {
+          padding-top: 60px;
+        }
+      /*]]>*/
+    </style>
+    <link href='/stylesheets/styles.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/prettify.css' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='brand' href='/'>Aslak Knutsen</a>
+          <ul class='nav'>
+            <li>
+              <a href='/blog'>Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <p>Yesterday I came across a "Getting Started with SASS" video at <a href="css-tricks.com/video-screencasts/111-get-yourself-preprocessing-in-just-a-few-minutes/">CSS-Tricks</a> where the presenter was using <a href="http://incident57.com/codekit/">CodeKit</a>. Now, CodeKit is a sass/less/jade/++ file listener / compiler for Mac, but one interesting feature I noticed was the auto refresh and css/javascript injection of compiled sources into a running browser. No more manual window swapping and refresh. Just code away and see the changes as they happen in the browser. Very cool. I want...</p>
+
+<p>That of course spawned a little Google Search session. The end result was simpler then anticipated.</p>
+
+<h2>The Result</h2>
+
+<p>Check this little YouTube video: <a href="http://www.youtube.com/watch?v=4LWbLa6lgxI">LiveReload+Awestruct</a></p>
+
+<h2>How To</h2>
+
+<p>There is a plugin to <a href="https://github.com/guard/guard-livereload">Guard</a> called LiveReload. What this does is simply to act as a <a href="http://livereload.com/">LiveReload</a> backend and push messages to the <a href="https://chrome.google.com/webstore/detail/jnihajbhpnppcggbcgedagnkighmdlei">LiveReload Chrome Extension</a> when a file change. Pretty simple.</p>
+
+<p>To set it up all you need to do is:</p>
+
+<pre><code>gem install guard-livereload&#x000A;gem install yajl-ruby&#x000A;</code></pre>
+
+<p>Go to your favorite Awestruct based website and add this to a file called @Guardfile@</p>
+
+<pre><code>guard 'livereload' do&#x000A;   watch(%r{_site/.+\.(css|js|html|json)})&#x000A;end&#x000A;</code></pre>
+
+<p>Now you have Guard configured to listen for changes in Awestruct's output folder, _site/. Awestruct it self is already listening to the source folders to trigger compile, so no extra is needed here.</p>
+
+<p>Next step is to install the <a href="https://chrome.google.com/webstore/detail/jnihajbhpnppcggbcgedagnkighmdlei">LiveReload Chrome Extension</a>. This gives you a little LR icon in your tool bar. We'll get back to that.</p>
+
+<p>To start up the whole thing we do the following:</p>
+
+<pre><code>guard start&#x000A;</code></pre>
+
+<p>The output so be similar to:</p>
+
+<pre><code>Guard uses NotifySend to send notifications.&#x000A;Guard is now watching at '/home/aslak/dev/source/testing/arquillian.github.com'&#x000A;LiveReload 1.6 is waiting for a browser to connect.&#x000A;&gt; &#x000A;</code></pre>
+
+<p>In a new console you start up Awestruct:</p>
+
+<pre><code>awestruct -d&#x000A;</code></pre>
+
+<p>Go to the normal Awestruct localhost url, http://localhost:4242/. Connect the Browser client to the file system watcher by pressing the shiny new LR button. The guard process should tell you that the client has connected:</p>
+
+<pre><code>&gt; Browser connected.&#x000A;Browser URL: http://localhost:4242/&#x000A;</code></pre>
+
+<p>That's it! Change any of the source files in your site and see the browser refresh/reload the resources.</p>
+      <hr />
+      <footer>
+        <p>&copy; Aslak Knutsen 2012</p>
+      </footer>
+    </div>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      $(window).load(function() { $('pre>code').addClass('prettify').parent().addClass('prettify'); prettify() })
+    </script>
+  </body>
+</html>

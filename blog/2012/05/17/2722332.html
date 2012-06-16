@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>How to make Awestruct a blogger platform</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body {
+          padding-top: 60px;
+        }
+      /*]]>*/
+    </style>
+    <link href='/stylesheets/styles.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/prettify.css' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='brand' href='/'>Aslak Knutsen</a>
+          <ul class='nav'>
+            <li>
+              <a href='/blog'>Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <p>Awestruct is a very nice dynamic static web site generation tool that has a powerful extension pipeline.</p>
+
+<p>Normally you will back your Awestruct site in a Git repository. You create a file on your local file system, commit it to the repository, regenerate the site and push it live. But we can take it one step further, why not have a simple web gui where you can write your blogs? What about GitHub Gists?</p>
+
+<h2>Awestruct::Extension::Gist</h2>
+
+<p>The setup is as easy as it get. Simply add the following to your pipeline.rb like this:</p>
+
+<pre><code>extension Awestruct::Extensions::Gist.new( 'username', 'password' ) &#x000A;</code></pre>
+
+<p>The Gist extension will now fetch all Gists via GitHubs REST API, select the Gists that contain a file that match blog.*. The rest of the Gists are ignored. The blog Gist is added to the normal site.pages array.</p>
+
+<p>The Gist page will have this metadata associated with it:</p>
+
+<pre><code>page.author = gist["user"]["login"]&#x000A;page.date = gist["created_at"]&#x000A;page.title = gist["description"]&#x000A;page.gist_source = gist["html_url"]&#x000A;page.relative_source_path = "#\{@output\}/#\{gist['id']\}.html"&#x000A;page.layout = "blog"&#x000A;</code></pre>
+
+<p>If we later in the pipeline add the Posts extension, our Gist blog will get picked up and processed like any other blog post.</p>
+
+<pre><code>extension Awestruct::Extensions::Posts.new( '/blog' ) &#x000A;</code></pre>
+
+<p>The markdown engine used to render the Gist is based on the blog file extension. Any markup supported by Awestruct can be used, e.g. blog.md, blog.textile, blog.asciidoc.</p>
+
+<p>Pretty neat! Now we have online edit support</p>
+      <hr />
+      <footer>
+        <p>&copy; Aslak Knutsen 2012</p>
+      </footer>
+    </div>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      $(window).load(function() { $('pre>code').addClass('prettify').parent().addClass('prettify'); prettify() })
+    </script>
+  </body>
+</html>
