@@ -47,7 +47,7 @@
 
 <pre><code>gem install guard-livereload&#x000A;gem install yajl-ruby&#x000A;</code></pre>
 
-<p>Go to your favorite Awestruct based website and add this to a file called @Guardfile@</p>
+<p>Go to your favorite Awestruct based website and add this your <em>Guardfile</em>:</p>
 
 <pre><code>guard 'livereload' do&#x000A;   watch(%r{_site/.+\.(css|js|html|json)})&#x000A;end&#x000A;</code></pre>
 
@@ -59,7 +59,7 @@
 
 <pre><code>guard start&#x000A;</code></pre>
 
-<p>The output so be similar to:</p>
+<p>The output should be similar to:</p>
 
 <pre><code>Guard uses NotifySend to send notifications.&#x000A;Guard is now watching at '/home/aslak/dev/source/testing/arquillian.github.com'&#x000A;LiveReload 1.6 is waiting for a browser to connect.&#x000A;&gt; &#x000A;</code></pre>
 
