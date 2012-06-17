@@ -8,6 +8,7 @@
       /*<![CDATA[*/
         body {
           padding-top: 60px;
+          padding-bottom: 60px;
         }
       /*]]>*/
     </style>
@@ -16,67 +17,173 @@
     <!--[if lt IE 9]>
       <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
     <![endif]-->
+    <script src=' https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js' type='text/javascript'></script>
   </head>
   <body>
-    <div class='navbar navbar-fixed-top'>
+    <header class='navbar navbar-fixed-top'>
       <div class='navbar-inner'>
         <div class='container'>
-          <a class='brand' href='/'>Aslak Knutsen</a>
-          <ul class='nav'>
-            <li>
-              <a href='/blog'>Blog</a>
-            </li>
-          </ul>
+          <div class='span3'>
+            <a class='brand' href='/'>Aslak Knutsen</a>
+          </div>
+          <div class='span4 nav'>
+            &lt;
+            <a class='hide' id='past'>Past</a>
+          </div>
+          <div class='span4 nav' style='text-align:right'>
+            <a class='hide' id='future'>Future</a>
+            &gt;
+          </div>
         </div>
       </div>
-    </div>
+    </header>
     <div class='container'>
-      <div class='hero-unit'>
-  <h1>Welcome</h1>
-  <p></p>
-</div>
-<div class='row'>
-  <div class='span8'>
-    <h2>Blog</h2>
-    <ul>
-      <li>
-        <h3>
-          <a href='/blog/2012/06/16/2940571.html'>How To LiveReload with Awestruct</a>
-        </h3>
-        <p>Yesterday I came across a "Getting Started with SASS" video at CSS-Tricks where the presenter was using CodeKit. Now, CodeKit is a sass/less/jade/++ file listener / compiler for Mac, but one interesting feature I noticed was the auto refresh and css/javascript injection of compiled sources into a running browser....</p>
-      </li>
-      <li>
-        <h3>
-          <a href='/blog/2012/05/17/2722332.html'>How to make Awestruct a blogger platform</a>
-        </h3>
-        <p>Awestruct is a very nice dynamic static web site generation tool that has a powerful extension pipeline.
-        
-        Normally you will back your Awestruct site in a Git repository....</p>
-      </li>
-      <li>
-        <h3>
-          <a href='/blog/2012/04/19/2422117.html'>How to import your project's history in Sonar</a>
-        </h3>
-        <p>How to import your project's history in Sonar
-        
-        When you do your first Sonar run on your project, you get a lot of new quality numbers to play with, but no trends. You only have one data set for comparison, the now picture....</p>
-      </li>
-    </ul>
+      <div class='blog' id='blog_entry'>
+  <div class='hero-unit'>
+    <h1>Welcome</h1>
   </div>
-  <div class='span4'>
-    <h2>About</h2>
-    <p>Senior Software Engineer at JBoss by Red Hat, Arquillian Project Lead.</p>
-  </div>
+  <ul>
+    <li>
+      <h3>
+        <a href='/blog/2012/06/16/2940571.html'>How To LiveReload with Awestruct</a>
+      </h3>
+      <p>Yesterday I came across a "Getting Started with SASS" video at CSS-Tricks where the presenter was using CodeKit. Now, CodeKit is a sass/less/jade/++ file listener / compiler for Mac, but one interesting feature I noticed was the auto refresh and css/javascript injection of compiled sources into a running browser....</p>
+    </li>
+    <li>
+      <h3>
+        <a href='/blog/2012/05/17/2722332.html'>How to make Awestruct a blogger platform</a>
+      </h3>
+      <p>Awestruct is a very nice dynamic static web site generation tool that has a powerful extension pipeline.
+      
+      Normally you will back your Awestruct site in a Git repository....</p>
+    </li>
+    <li>
+      <h3>
+        <a href='/blog/2012/04/19/2422117.html'>How to import your project's history in Sonar</a>
+      </h3>
+      <p>When you do your first Sonar run on your project, you get a lot of new quality numbers to play with, but no trends. You only have one data set for comparison, the now picture....</p>
+    </li>
+  </ul>
 </div>
-      <hr />
-      <footer>
-        <p>&copy; Aslak Knutsen 2012</p>
-      </footer>
     </div>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+    <footer class='navbar navbar-fixed-bottom'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <div class='span3' style='padding-top:5px'>
+            <a href='http://arquillian.org'>
+              <img src='/images/arquillian_icon_32px-glossy.png' />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src='/javascripts/prettify.js' type='text/javascript'></script>
     <script type='text/javascript'>
       $(window).load(function() { $('pre>code').addClass('prettify').parent().addClass('prettify'); prettify() })
     </script>
   </body>
 </html>
+<script>
+  $(window).load(function() {
+    $.ajax({
+      url: '/api/blogs.json',
+      dataType: 'json'
+    }).done(function(data) {
+  
+      blogs = {
+        data: data,
+        container: "#blog_entry",
+        future_link: "#future",
+        past_link: "#past"
+      }
+      blogs.initialize = function(current_url) {
+        this.data.current(current_url)
+  
+        if(this.data.hasPast()) {
+          past = this.data.getPast()
+          this.prepareNav(this.past_link, past.name, past.path)
+        }
+        else {
+          this.prepareNav(this.past_link, "Index", "/index.html")
+        }
+        if(this.data.hasFuture()) {
+          future = this.data.getFuture()
+          this.prepareNav(this.future_link, future.name, future.path)
+        }
+        else {
+          this.prepareNav(this.future_link, "Index", "/index.html")
+        }
+      }
+      blogs.data.current = function(url) {
+        this.current_url = url
+      }
+      blogs.data.hasPast = function() {
+        var index = this.current_index()
+        return index+1 <= (this.length-1)
+      }
+      blogs.data.getPast = function() {
+        return this[this.current_index()+1]
+      }
+      blogs.data.hasFuture = function() {
+        var index = this.current_index()
+        return index-1 >= 0
+      }
+      blogs.data.getFuture = function() {
+        return this[this.current_index()-1]
+      }
+      blogs.data.current_index = function() {
+        for(i = 0; i < this.length; i++) {
+          if(this[i].path == this.current_url) {
+            return i;
+          }
+        }
+        return -1
+      }
+      blogs.prepareNav = function(link, text, url) {
+        $(link)
+          .html(text)
+          .fadeIn(500)
+          .on().click(function() {
+            blogs.load(url)
+          })
+      }
+      blogs.load = function (url) {
+        cont = this.container
+        $(cont).slideUp('fast', function() {
+          $(this).load(url + ' ' + cont, function() {
+            $('pre>code').addClass('prettify')
+              .parent().addClass('prettify');
+            prettify();
+            blogs.initialize(url)
+            $(this).slideDown('fast');
+          })
+        })
+      }
+      blogs.initialize(window.location.pathname)
+  
+      $(window).keydown(function (e) {
+        var keyCode = e.keyCode || e.which,
+              arrow = {left: 37, right: 39};
+  
+        switch(keyCode) {
+          case arrow.left:
+            if(blogs.data.hasPast()) {
+              blogs.load(blogs.data.getPast().path)
+            }
+            else {
+              blogs.load("/index.html")
+            }
+          break;
+          case arrow.right:
+            if(blogs.data.hasFuture()) {
+              blogs.load(blogs.data.getFuture().path)
+            }
+            else {
+              blogs.load("/index.html")
+            }
+          break;
+        }
+      })
+    })
+  })
+</script>
