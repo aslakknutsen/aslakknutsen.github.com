@@ -2,4 +2,27 @@
 @import "bootstrap";
 
 // Include responsive Bootstrap styles
-// @import "bootstrap-responsive";
+@import "bootstrap-responsive";
+
+html {
+	overflow-y: scroll;
+}
+
+.blog {
+	li {
+		list-style-type: none;
+	}
+}
+
+.nav {
+	padding-top: 8px;
+	a {
+		font-size:18px;
+	}
+}
+
+footer {
+	.navbar-inner {
+		background-color: #000;
+	}
+}

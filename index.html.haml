@@ -2,23 +2,17 @@
 layout: base
 title: 'An awesome site'
 ---
-.hero-unit
-  %h1 Welcome
-  %p 
-.row
-  .span8
-    %h2 Blog
-    %ul
-      - for post in site.posts[0,3]
-        %li
-          %h3
-            %a{:href=>post.url}= post.title
-          - if (post.content.length > 0)
-            - cut_at = post.content.index(/<pre[^>]*>/)
-            -#%p= summarize(html_to_text(cut_at ? post.content[0,cut_at] : post.content), 50)
-            - text = html_to_text(cut_at ? post.content[0, cut_at] : post.content)
-            -# might want to use 'white-space: pre-line;' here
-            %p<= text[0..text.index(/[\.\!]( |$)/, [text.index(/[\.\!]( |$)/) + 1, text.length - 1].min)] + '...'
-  .span4
-    %h2 About
-    %p Senior Software Engineer at JBoss by Red Hat, Arquillian Project Lead.
+#blog_entry.blog
+  .hero-unit
+    %h1 Welcome
+
+  %ul
+    - for post in site.posts[0,3]
+      %li
+        %h3
+          %a{:href=>post.url}= post.title
+        - if (post.content.length > 0)
+          - cut_at = post.content.index(/<pre[^>]*>/)
+          - text = html_to_text(cut_at ? post.content[0, cut_at] : post.content)
+          -# might want to use 'white-space: pre-line;' here
+          %p<= text[0..text.index(/[\.\!]( |$)/, [text.index(/[\.\!]( |$)/) + 1, text.length - 1].min)] + '...'

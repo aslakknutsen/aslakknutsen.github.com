@@ -1,0 +1,9 @@
+---
+---
+- blogs = []
+- for post in site.posts
+  - blog = { :name => post.title, :date=> post.date, :path=> post.output_path}
+  - blog[:tags] = post.tags unless post.tags.nil?
+  - blogs << blog
+
+=JSON.pretty_generate(blogs)
