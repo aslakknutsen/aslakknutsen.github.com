@@ -42,6 +42,12 @@
   <ul>
     <li>
       <h3>
+        <a href='/blog/2013/01/27/4648282.html'>Ruby JavaDoc Doclets with JRuby</a>
+      </h3>
+      <p>While sitting in front of the fireplace, during long dark winter nights. You have probably wondered, as most minds have at some point in their existence, or even dreamed....</p>
+    </li>
+    <li>
+      <h3>
         <a href='/blog/2012/06/16/2940571.html'>LiveReload with Awestruct</a>
       </h3>
       <p>Yesterday I came across a "Getting Started with SASS" video at CSS-Tricks where the presenter was using CodeKit. Now, CodeKit is a sass/less/jade/++ file listener / compiler for Mac, but one interesting feature I noticed was the auto refresh and css/javascript injection of compiled sources into a running browser....</p>
@@ -78,109 +84,119 @@
     <script type='text/javascript'>
       $(window).load(function() { $('pre>code').addClass('prettify').parent().addClass('prettify'); prettify() })
     </script>
-  </body>
-</html>
-<script>
-  $(window).load(function() {
-    $.ajax({
-      url: '/api/blogs.json',
-      dataType: 'json'
-    }).done(function(data) {
-  
-      blogs = {
-        data: data,
-        container: "#blog_entry",
-        future_link: "#future",
-        past_link: "#past"
-      }
-      blogs.initialize = function(current_url) {
-        this.data.current(current_url)
-  
-        if(this.data.hasPast()) {
-          past = this.data.getPast()
-          this.prepareNav(this.past_link, past.name, past.path)
-        }
-        else {
-          this.prepareNav(this.past_link, "Index", "/index.html")
-        }
-        if(this.data.hasFuture()) {
-          future = this.data.getFuture()
-          this.prepareNav(this.future_link, future.name, future.path)
-        }
-        else {
-          this.prepareNav(this.future_link, "Index", "/index.html")
-        }
-      }
-      blogs.data.current = function(url) {
-        this.current_url = url
-      }
-      blogs.data.hasPast = function() {
-        var index = this.current_index()
-        return index+1 <= (this.length-1)
-      }
-      blogs.data.getPast = function() {
-        return this[this.current_index()+1]
-      }
-      blogs.data.hasFuture = function() {
-        var index = this.current_index()
-        return index-1 >= 0
-      }
-      blogs.data.getFuture = function() {
-        return this[this.current_index()-1]
-      }
-      blogs.data.current_index = function() {
-        for(i = 0; i < this.length; i++) {
-          if(this[i].path == this.current_url) {
-            return i;
+    <script>
+      $(window).load(function() {
+        $.ajax({
+          url: '/api/blogs.json',
+          dataType: 'json'
+        }).done(function(data) {
+      
+          blogs = {
+            data: data,
+            container: "#blog_entry",
+            future_link: "#future",
+            past_link: "#past"
           }
-        }
-        return -1
-      }
-      blogs.prepareNav = function(link, text, url) {
-        $(link)
-          .html(text)
-          .fadeIn(500)
-          .on().click(function() {
-            blogs.load(url)
-          })
-      }
-      blogs.load = function (url) {
-        cont = this.container
-        $(cont).slideUp('fast', function() {
-          $(this).load(url + ' ' + cont, function() {
-            $('pre>code').addClass('prettify')
-              .parent().addClass('prettify');
-            prettify();
-            blogs.initialize(url)
-            $(this).slideDown('fast');
+          blogs.initialize = function(current_url) {
+            this.data.current(current_url)
+      
+            if(this.data.hasPast()) {
+              past = this.data.getPast()
+              this.prepareNav(this.past_link, past.name, past.path)
+            }
+            else {
+              this.prepareNav(this.past_link, "Index", "/index.html")
+            }
+            if(this.data.hasFuture()) {
+              future = this.data.getFuture()
+              this.prepareNav(this.future_link, future.name, future.path)
+            }
+            else {
+              this.prepareNav(this.future_link, "Index", "/index.html")
+            }
+          }
+          blogs.data.current = function(url) {
+            this.current_url = url
+          }
+          blogs.data.hasPast = function() {
+            var index = this.current_index()
+            return index+1 <= (this.length-1)
+          }
+          blogs.data.getPast = function() {
+            return this[this.current_index()+1]
+          }
+          blogs.data.hasFuture = function() {
+            var index = this.current_index()
+            return index-1 >= 0
+          }
+          blogs.data.getFuture = function() {
+            return this[this.current_index()-1]
+          }
+          blogs.data.current_index = function() {
+            for(i = 0; i < this.length; i++) {
+              if(this[i].path == this.current_url) {
+                return i;
+              }
+            }
+            return -1
+          }
+          blogs.prepareNav = function(link, text, url) {
+            $(link)
+              .html(text)
+              .fadeIn(500)
+              .on().click(function() {
+                blogs.load(url)
+              })
+          }
+          blogs.load = function (url) {
+            cont = this.container
+            $(cont).slideUp('fast', function() {
+              $(this).load(url + ' ' + cont, function() {
+                $('pre>code').addClass('prettify')
+                  .parent().addClass('prettify');
+                prettify();
+                blogs.initialize(url)
+                $(this).slideDown('fast');
+              })
+            })
+          }
+          blogs.initialize(window.location.pathname)
+      
+          $(window).keydown(function (e) {
+            var keyCode = e.keyCode || e.which,
+                  arrow = {left: 37, right: 39};
+      
+            switch(keyCode) {
+              case arrow.left:
+                if(blogs.data.hasPast()) {
+                  blogs.load(blogs.data.getPast().path)
+                }
+                else {
+                  blogs.load("/index.html")
+                }
+              break;
+              case arrow.right:
+                if(blogs.data.hasFuture()) {
+                  blogs.load(blogs.data.getFuture().path)
+                }
+                else {
+                  blogs.load("/index.html")
+                }
+              break;
+            }
           })
         })
-      }
-      blogs.initialize(window.location.pathname)
-  
-      $(window).keydown(function (e) {
-        var keyCode = e.keyCode || e.which,
-              arrow = {left: 37, right: 39};
-  
-        switch(keyCode) {
-          case arrow.left:
-            if(blogs.data.hasPast()) {
-              blogs.load(blogs.data.getPast().path)
-            }
-            else {
-              blogs.load("/index.html")
-            }
-          break;
-          case arrow.right:
-            if(blogs.data.hasFuture()) {
-              blogs.load(blogs.data.getFuture().path)
-            }
-            else {
-              blogs.load("/index.html")
-            }
-          break;
-        }
       })
-    })
-  })
-</script>
+    </script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount','UA-38014373-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+  </body>
+</html>

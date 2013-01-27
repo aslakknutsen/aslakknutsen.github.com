@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Ruby JavaDoc Doclets with JRuby</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+      /*]]>*/
+    </style>
+    <link href='/stylesheets/styles.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/prettify.css' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+    <![endif]-->
+    <script src=' https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <header class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <div class='span3'>
+            <a class='brand' href='/'>Aslak Knutsen</a>
+          </div>
+          <div class='span4 nav'>
+            &lt;
+            <a class='hide' id='past'>Past</a>
+          </div>
+          <div class='span4 nav' style='text-align:right'>
+            <a class='hide' id='future'>Future</a>
+            &gt;
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class='container'>
+      <div id='blog_entry'>
+  <div class='row headline'>
+    <div class='span8'>
+      <h1>Ruby JavaDoc Doclets with JRuby</h1>
+    </div>
+  </div>
+  
+
+<div class="paragraph">
+  
+  <p>While sitting in front of the fireplace, during long dark winter nights. You have probably wondered, as most minds have at some point in their existence, or even dreamed. Would humanity live to see the day? The day we come so close to ascension that we would be able to join the wonders of the JavaDoc API with the fun of Ruby.</p>
+</div>
+
+<div class="paragraph">
+  
+  <p>Wait, what? No?</p>
+</div>
+
+<div class="paragraph">
+  
+  <p>Well, in the Arquillian project we have some interesting ideas which leads to some interesting solutions. One of them is to automate documentation. One part of that automation is the "No duplication" rule.</p>
+</div>
+
+<div class="paragraph">
+  
+  <p>On of the issues that has been outstanding for some time is to extract the documentation found in the Java Source code itself. This is especially interesting for the Configuration JavaBean objects for Containers and Extensions. While it would be easy enough to manually copy pasting the documentation from the source to the website, we would break the "No Duplication" rule. And let&#8217;s be honest, as this would not be the most desirable task for someone to do, the code and documentation would come out of sync faster then you can say; automation, automation, automation.</p>
+</div>
+
+<div class="paragraph">
+  
+  <p>We need some way to automate it.</p>
+</div>
+
+
+<div class="sect1">
+  <h2 id="_parse_the_javadoc_output">Parse the JavaDoc output</h2>
+  
+  <div class="sectionbody">
+
+<div class="paragraph">
+  
+  <p>The obvious solution is, just configure Maven to run JavaDoc on the modules. Simple, they are published to Maven Central and we could fetch them from there. One problem is that the output of JavaDoc is HTML and not usable for what we want. And I don&#8217;t want to smoke whatever the person who created the html output did, because it&#8217;s close to impossible to parse anything sensible out of it.</p>
+</div>
+
+<div class="paragraph">
+  
+  <p>And we want to avoid forcing build time plugins on our community builds. Instead we want to do some post processing of the repository data when we generate the Arquillian.org website. This also allow us to update the data structure and parser as we please and simply rerun it on the old source.</p>
+</div>
+
+  </div>
+  
+</div>
+
+
+
+<div class="sect1">
+  <h2 id="_grab_the_source">Grab the Source</h2>
+  
+  <div class="sectionbody">
+
+<div class="paragraph">
+  
+  <p>It felt like it would be a fairly simple task to just grab the java source, run it through a few regexp and be done with it. This is how the backend data for the <a href="https://staging-arquillian.rhcloud.com/code/reference/#org.jboss.arquillian.container.test.api.Deployment">Reference Dictionary</a> was extracted. Now there is a reason why this is still in staging, and not pushed upstream. The seemingly simple solution ended up very fragile and became a unmaintainable ball of mud with more holes and edge cases then swiss cheese.</p>
+</div>
+
+<div class="paragraph">
+  
+  <p>There seems to be some truth in this statement after all:</p>
+</div>
+
+<div class="quoteblock">
+  
+  <div class="content">
+Some people, when confronted with a problem, think
+“I know, I&#8217;ll use regular expressions.” Now they have two problems.
+  </div>
+  <div class="attribution">
+    
+    
+  </div>
+</div>
+
+  </div>
+  
+</div>
+
+
+
+<div class="sect1">
+  <h2 id="_ruby_and_a_lexer">Ruby and a Lexer</h2>
+  
+  <div class="sectionbody">
+
+<div class="paragraph">
+  
+  <p>At some point using pure Ruby with a Java Language Lexer on the source code came up as an option. But the Lexer for the Java Language I could find in Ruby only parsed the Java Statements and ignored the bits I was looking for, the comments. That day I didn&#8217;t feel like creating a Lexer myself, so the idea was scrapped.</p>
+</div>
+
+  </div>
+  
+</div>
+
+
+
+<div class="sect1">
+  <h2 id="_java_and_javadoc">Java and JavaDoc</h2>
+  
+  <div class="sectionbody">
+
+<div class="paragraph">
+  
+  <p>Another alternative is to rely on the JavaDoc framework and create special Doclets for what we need. The advantage here is that you leave all parsing and file handling to the JavaDoc framework. We used this strategy to extract the backing report text for the <a href="https://staging-arquillian.rhcloud.com/code/tck/">Container TCK Report</a>. While this work, it doesn&#8217;t come without some problems as well.</p>
+</div>
+
+<div class="paragraph">
+  
+  <p>Our site generation tool, Awestruct, is based on Ruby. JavaDoc and Doclets are Java. While we could call out to the command line to execute the JavaDoc command and fetch the result we would also need to compile the Java Source and include it in the site generation somehow.. This seemed like too much hassle.</p>
+</div>
+
+  </div>
+  
+</div>
+
+
+
+<div class="sect1">
+  <h2 id="_rubydoclets">RubyDoclets</h2>
+  
+  <div class="sectionbody">
+
+<div class="paragraph">
+  
+  <p>Enter the beautiful world of JRuby.</p>
+</div>
+
+<div class="paragraph">
+  
+  <p>I couldn&#8217;t find a way to dynamically load Ruby classes in Java using the normal Class.forName which is used by JavaDoc to load Doclets, but we can always just go down a level and create our own JavaDoc Starter class.</p>
+</div>
+
+<div class="listingblock">
+  
+  <div class="content monospaced">
+    
+    <pre class="highlight"><code class="ruby">require 'java'&#x000A;&#x000A;module Java&#x000A;  module Doc&#x000A;&#x000A;    def self.parse(source_path, &amp;block)&#x000A;      context = com.sun.tools.javac.util.Context.new&#x000A;&#x000A;      options = com.sun.tools.javac.util.Options.instance context&#x000A;      options.put '-sourcepath', source_path&#x000A;&#x000A;      com.sun.tools.javadoc.Messager.preRegister context, "javadoc"&#x000A;      tool = com.sun.tools.javadoc.JavadocTool.make0 context&#x000A;&#x000A;      sub_packages = com.sun.tools.javac.util.List.of 'org', 'com'&#x000A;      options_list = com.sun.tools.javac.util.List.nil&#x000A;      empty = com.sun.tools.javac.util.List.nil&#x000A;      filter = com.sun.tools.javadoc.ModifierFilter.new com.sun.tools.javadoc.ModifierFilter::ALL_ACCESS&#x000A;&#x000A;      root = tool.getRootDocImpl('en', 'utf-8', filter, empty, options_list, false, sub_packages, empty, false, false, false)&#x000A;&#x000A;      block.call(root) if block&#x000A;      return root&#x000A;    end&#x000A;&#x000A;  end&#x000A;end</code></pre>
+    
+  </div>
+</div>
+
+
+<div class="sect2">
+  <h3 id="_api_usage">API Usage</h3>
+  
+
+<div class="paragraph">
+  
+  <p>Call the method with the location of the source and an optional Ruby Block. From here on you can interact with the normal JavaDoc Doclet API, RootDoc.</p>
+</div>
+
+<div class="listingblock">
+  
+  <div class="content monospaced">
+    
+    <pre class="highlight"><code>require 'javadoc'&#x000A;&#x000A;path = '/home/aslak/dev/source/testing/arquillian-tck/container/src/test/java/'&#x000A;&#x000A;Java::Doc.parse path do |root| &#x000A;&#x000A;  root.classes.each do |c|&#x000A;    puts "= Class: #{c.name}"&#x000A;    if c.comment_text.length &gt; 0&#x000A;      puts "****"&#x000A;      puts c.comment_text&#x000A;      puts "****"&#x000A;    end&#x000A;&#x000A;    c.fields.each do |f|&#x000A;      puts "== Field: #{f.name}"&#x000A;      if f.comment_text.length &gt; 0&#x000A;        puts "****"&#x000A;        puts f.comment_text&#x000A;        puts "****"&#x000A;      end&#x000A;    end&#x000A;&#x000A;    c.methods.each do |m|&#x000A;      puts "== Method: #{m.name}#{m.signature}"&#x000A;      if m.comment_text.length &gt; 0&#x000A;        puts "****"&#x000A;        puts m.comment_text&#x000A;        puts "****"&#x000A;      end&#x000A;    end&#x000A;  end&#x000A;end</code></pre>
+    
+  </div>
+</div>
+
+  
+</div>
+
+
+
+<div class="sect2">
+  <h3 id="_execution">Execution</h3>
+  
+
+<div class="paragraph">
+  
+  <p>The only downside is that you need to add the tools.jar to the CLASSPATH when executing the program. This is needed because the JavaDoc API&#8217;s are not part of the Runtime JVM. </p>
+</div>
+
+<div class="listingblock">
+  
+  <div class="content monospaced">
+    
+    <pre class="highlight"><code>CLASSPATH=$JAVA_HOME/lib/tools.jar jruby test.rb</code></pre>
+    
+  </div>
+</div>
+
+
+<div class="sect3">
+  <h4 id="_console_output">Console Output</h4>
+  
+
+<div class="listingblock">
+  
+  <div class="content monospaced">
+    
+    <pre class="highlight"><code>= Class: EchoServlet&#x000A;****&#x000A;Simple Servlet that echo the given @text@ request parameter&#x000A;****&#x000A;== Field: serialVersionUID&#x000A;== Field: TEXT_PARAM&#x000A;****&#x000A;The Query parameter to echo&#x000A;****&#x000A;== Method: doGet(HttpServletRequest, HttpServletResponse)&#x000A;****&#x000A;Echo the given text.&#x000A;****</code></pre>
+    
+  </div>
+</div>
+
+  
+</div>
+
+
+  
+</div>
+
+
+  </div>
+  
+</div>
+</div>
+    </div>
+    <footer class='navbar navbar-fixed-bottom'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <div class='span3' style='padding-top:5px'>
+            <a href='http://arquillian.org'>
+              <img src='/images/arquillian_icon_32px-glossy.png' />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      $(window).load(function() { $('pre>code').addClass('prettify').parent().addClass('prettify'); prettify() })
+    </script>
+    <script>
+      $(window).load(function() {
+        $.ajax({
+          url: '/api/blogs.json',
+          dataType: 'json'
+        }).done(function(data) {
+      
+          blogs = {
+            data: data,
+            container: "#blog_entry",
+            future_link: "#future",
+            past_link: "#past"
+          }
+          blogs.initialize = function(current_url) {
+            this.data.current(current_url)
+      
+            if(this.data.hasPast()) {
+              past = this.data.getPast()
+              this.prepareNav(this.past_link, past.name, past.path)
+            }
+            else {
+              this.prepareNav(this.past_link, "Index", "/index.html")
+            }
+            if(this.data.hasFuture()) {
+              future = this.data.getFuture()
+              this.prepareNav(this.future_link, future.name, future.path)
+            }
+            else {
+              this.prepareNav(this.future_link, "Index", "/index.html")
+            }
+          }
+          blogs.data.current = function(url) {
+            this.current_url = url
+          }
+          blogs.data.hasPast = function() {
+            var index = this.current_index()
+            return index+1 <= (this.length-1)
+          }
+          blogs.data.getPast = function() {
+            return this[this.current_index()+1]
+          }
+          blogs.data.hasFuture = function() {
+            var index = this.current_index()
+            return index-1 >= 0
+          }
+          blogs.data.getFuture = function() {
+            return this[this.current_index()-1]
+          }
+          blogs.data.current_index = function() {
+            for(i = 0; i < this.length; i++) {
+              if(this[i].path == this.current_url) {
+                return i;
+              }
+            }
+            return -1
+          }
+          blogs.prepareNav = function(link, text, url) {
+            $(link)
+              .html(text)
+              .fadeIn(500)
+              .on().click(function() {
+                blogs.load(url)
+              })
+          }
+          blogs.load = function (url) {
+            cont = this.container
+            $(cont).slideUp('fast', function() {
+              $(this).load(url + ' ' + cont, function() {
+                $('pre>code').addClass('prettify')
+                  .parent().addClass('prettify');
+                prettify();
+                blogs.initialize(url)
+                $(this).slideDown('fast');
+              })
+            })
+          }
+          blogs.initialize(window.location.pathname)
+      
+          $(window).keydown(function (e) {
+            var keyCode = e.keyCode || e.which,
+                  arrow = {left: 37, right: 39};
+      
+            switch(keyCode) {
+              case arrow.left:
+                if(blogs.data.hasPast()) {
+                  blogs.load(blogs.data.getPast().path)
+                }
+                else {
+                  blogs.load("/index.html")
+                }
+              break;
+              case arrow.right:
+                if(blogs.data.hasFuture()) {
+                  blogs.load(blogs.data.getFuture().path)
+                }
+                else {
+                  blogs.load("/index.html")
+                }
+              break;
+            }
+          })
+        })
+      })
+    </script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount','UA-38014373-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+  </body>
+</html>
