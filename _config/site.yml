@@ -1,3 +1,4 @@
+interpolate: false
 profiles:
   production:
     base_url: http://aslakknutsen.github.com
