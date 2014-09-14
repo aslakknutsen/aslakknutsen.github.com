@@ -8,7 +8,8 @@
   <script src="//code.highcharts.com/4.0.3/highcharts.js"></script>
   <script src="//code.highcharts.com/4.0.3/highcharts-more.js"></script>
   <script src="//code.highcharts.com/4.0.3/themes/dark-unica.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   
   <style>
     html {
@@ -17,6 +18,9 @@
     body {
       background-color: #2a2a2b;
       color: #E0E0E3;
+    }
+    .modal {
+      color: #000;
     }
     .nav li.active {
       background-color: #eee;
@@ -48,10 +52,36 @@
       <div id="data"></div>
     </div>
   </div>
+
+  <div class="modal fade" id="module_usage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Module</h4>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 
 <script>
+  Array.prototype.unique = function() {
+      var unique = [];
+      for (var i = 0; i < this.length; i++) {
+          if (unique.indexOf(this[i]) == -1) {
+              unique.push(this[i]);
+          }
+      }
+      return unique;
+  };
   var create_overview_graph = function(set) {
     if(typeof window.$chart === "undefined") {
       window.$chart = new Highcharts.Chart({
@@ -174,7 +204,7 @@
 
       repo.dependencies.forEach(function(dep) {
         if(dep.name !== 'Other' && dep.name !== 'Internal') {
-          content += '<div class="col-md-6 name">' + dep.name + '</div>'
+          content += '<div class="col-md-6 name"><a data-module="' + dep.name + '" data-toggle="modal" data-target="#module_usage">' + dep.name + '</a></div>'
           content += '<div class="col-md-6 version">' + (dep.version == null ? 'n/a':dep.version) + '</div>'
         }
       })
@@ -264,6 +294,36 @@
 
     $("#overview_sum").html(content)
   }
+  var display_module_overview = function(target, type, data) {
+    var content = '';
+
+    var usage = new Array();
+    var versions = new Array();
+
+    data.forEach(function(project) {
+      project.repos.forEach(function(repo) {
+        repo.dependencies.forEach(function(dep) {
+          if(dep.name === type) {
+            usage.push(project.name);
+            versions.push(dep.version)
+          }
+        })
+      })
+    })
+
+    usage = usage.unique().sort()
+    versions = versions.unique().sort();
+
+    content += '<ul>'
+    usage.forEach(function(project) {
+      content += '<li>' + project +'</li>'
+    })
+    content += '</ul>'
+
+
+    $(target).find(".modal-title").html(type + "<br/><small>" + versions.join(', ') + "</small>")
+    $(target).find(".modal-body").html(content)
+  }
   $(function() {
     $.ajax({
       url: 'result.json',
@@ -280,6 +340,10 @@
         } else {
           display_overview(data);
         }
+
+        $(window).on("show.bs.modal", function(event) {
+          display_module_overview($(event.target), event.relatedTarget.getAttribute('data-module'), data)
+        })
       }
     });
   });
