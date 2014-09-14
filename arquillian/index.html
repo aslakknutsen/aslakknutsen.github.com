@@ -37,7 +37,14 @@
   <div class="row">
     <div class="col-md-2" id="menu"></div>
     <div class="col-md-9" id="content">
-      <div id="chart"></div>
+      <div id="chart">
+                <div class="page-header">
+          <h1 class="panel-title">Arquillian Usage <small>within Red Hat JBoss</small></h1>
+        </div>
+        <div id="overview_sum">
+          loading..
+        </div>
+      </div>
       <div id="data"></div>
     </div>
   </div>
@@ -216,6 +223,34 @@
     create_overview_graph(convert_overview_data(filtered));
     create_overview(filtered);
   }
+  var display_overview = function(data) {
+    var runwith = 0;
+    var deployments = 0;
+    var tests = 0;
+    var assertions = 0;
+    data.forEach(function(project) {
+      runwith += project.sum.runwith;
+      deployments += project.sum.deployments;
+      tests += project.sum.tests;
+      assertions += project.sum.assertions;
+    })
+
+    var content = "";
+    content += '<div class="row">'
+      content += '<div class="col-md-3">Classes</div>'
+      content += '<div class="col-md-3">Deployments</div>'
+      content += '<div class="col-md-3">Tests</div>'
+      content += '<div class="col-md-3">Assertions</div>'
+    content += '</div>'
+    content += '<div class="row">'
+      content += '<div class="col-md-3">' + runwith +'</div>'
+      content += '<div class="col-md-3">' + deployments +'</div>'
+      content += '<div class="col-md-3">' + tests +'</div>'
+      content += '<div class="col-md-3">' + assertions +'</div>'
+    content += '</div>'
+
+    $("#overview_sum").html(content)
+  }
   $(function() {
     $.ajax({
       url: 'result.json',
@@ -229,6 +264,8 @@
         if(window.location.hash) {
           $("a[href=" + window.location.hash + "]").parent().addClass("active");
           display_project(window.location.hash.substring(1), data);
+        } else {
+          display_overview(data);
         }
       }
     });
