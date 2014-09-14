@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arquillian usage report</title>
+
+
+  <script src="//code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="//code.highcharts.com/4.0.3/highcharts.js"></script>
+  <script src="//code.highcharts.com/4.0.3/highcharts-more.js"></script>
+  <script src="//code.highcharts.com/4.0.3/themes/dark-unica.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  
+  <style>
+    html {
+        overflow-y: scroll;
+    }
+    body {
+      background-color: #2a2a2b;
+      color: #E0E0E3;
+    }
+    .nav li.active {
+      background-color: #eee;
+    }
+    .nav>li>a {
+      padding: 5px 15px;
+    }
+    #chart {
+      height: 400px;
+    }
+    .dependencies .version {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-2" id="menu"></div>
+    <div class="col-md-9" id="content">
+      <div id="chart"></div>
+      <div id="data"></div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  var create_overview_graph = function(set) {
+    if(typeof window.$chart === "undefined") {
+      window.$chart = new Highcharts.Chart({
+          chart: {
+              type: 'column',
+              backgroundColor: "#2a2a2b",
+              renderTo: "chart"
+          },
+          credits: {
+            enabled: false
+          },
+          title: {
+              text: set.name
+          },
+          xAxis: {
+              categories: set.categories
+          },
+          yAxis: {
+              min: 0,
+              title: {
+                  text: 'Total'
+              }
+          },
+          legend: {
+              reversed: true
+          },
+          plotOptions: {
+              series: {
+              }
+          },
+          series: set.data
+      })
+    } else {
+      window.$chart.xAxis.forEach(function(value) {
+        value.remove(false);
+      })
+      window.$chart.series.forEach(function(value) {
+        value.remove(false)
+      })
+      window.$chart.addAxis({categories: set.categories}, true, false);
+      set.data.forEach(function(value) {
+        window.$chart.addSeries(value, false);
+      })
+      window.$chart.setTitle({text: set.name}, {}, false);
+      window.$chart.redraw();
+      
+    }
+  }
+  var convert_overview_data = function(project) {
+    var categories = ['Classes', 'Deployments', 'Tests', 'Assertions']
+    
+
+    var totals = new Array();
+    project.repos.forEach(function(repo) {
+      totals.push(
+        {
+          name: repo.name, 
+          data: [
+            repo.sum.runwith,
+            repo.sum.deployments,
+            repo.sum.tests,
+            repo.sum.assertions
+          ]
+        })
+    })
+
+    return {
+      name: project.name,
+      categories: categories,
+      data: totals
+    }
+  };
+  var create_overview = function(project) {
+    
+    var content = "";
+
+    content += '<div class="row">'
+        content += '<div class="row">'
+          content += '<div class="col-md-12 page-header">'
+            content += '<h2>' + project.name +'</h2>'
+          content += '</div>'
+        content += '<div class="row">'
+          content += '<div class="col-md-3">Classes</div>'
+          content += '<div class="col-md-3">Deployments</div>'
+          content += '<div class="col-md-3">Tests</div>'
+          content += '<div class="col-md-3">Assertions</div>'
+        content += '</div>'
+        content += '<div class="row">'
+          content += '<div class="col-md-3">' + project.sum.runwith +'</div>'
+          content += '<div class="col-md-3">' + project.sum.deployments +'</div>'
+          content += '<div class="col-md-3">' + project.sum.tests +'</div>'
+          content += '<div class="col-md-3">' + project.sum.assertions +'</div>'
+        content += '</div>'
+      content += '</div>'
+
+    project.repos.sort(function(a, b) {
+      if(a.sum.assertions < b.sum.assertions ) {
+        return 1;
+      }
+      if(a.sum.assertions > b.sum.assertions ) {
+        return -1;
+      }
+      return 0;
+    })
+    project.repos.forEach(function(repo) {
+      content += '<div class="repo row">'
+      content += '<h3>' + repo.name + ' <small>' + repo.git + '</small></h3>'
+      content += '<div class="col-md-8">'
+      content += '<div class="row dependencies">'
+      repo.dependencies.forEach(function(dep) {
+        content += '<div class="col-md-6 name">' + dep.name + '</div>'
+        content += '<div class="col-md-6 version">' + (dep.version == null ? 'n/a':dep.version) + '</div>'
+      })
+      content += '</div>'
+      content += '</div>'
+      content += '<dl class="sum col-md-3 dl-horizontal">'
+      content += '<dt>Classes</dt>'
+      content += '<dd class="right">' + repo.sum.runwith +'</dd>'
+      content += '<dt>Deployments</dt>'
+      content += '<dd>' + repo.sum.deployments +'</dd>'
+      content += '<dt>Tests</dt>'
+      content += '<dd>' + repo.sum.tests +'</dd>'
+      content += '<dt>Assertions</dt>'
+      content += '<dd class="right">' + repo.sum.assertions +'</dd>'
+      content += '</dl>'
+
+      content += '</div>'
+    })
+
+    $("#data").html(content)
+  }
+  var create_menu = function(data) {
+    data.sort(function(a, b) {
+      if(a.name > b.name) {
+        return 1
+      }
+      if(a.name < b.name) {
+        return -1
+      }
+      return 0
+    })
+
+    var content = '<nav class="navbar"><ul class="nav nav-stacked">'
+    data.forEach(function(project) {
+      content += '<li><a href="#' + project.name + '">' + project.name + '</a></li>' 
+    })
+    content += '</ul></nav>'
+
+    $("#menu").html(content)
+    $('.nav li').click(function(e) {
+        $('.nav li.active').removeClass('active');
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
+    });
+  }
+  var filter_data = function(hash, data) {
+    for(var i = 0; i < data.length; i++) {
+      var project = data[i];
+      if(project.name === hash) {
+        return project;
+      }
+    }
+    return {}
+  }
+  var display_project = function(name, data) {
+    var filtered = filter_data(name, data);
+    create_overview_graph(convert_overview_data(filtered));
+    create_overview(filtered);
+  }
+  $(function() {
+    $.ajax({
+      url: 'result.json',
+      dataType: 'json',
+      success: function(data, status) {
+        create_menu(data);
+        
+        $(window).on('hashchange', function(event) {
+          display_project(event.target.location.hash.substring(1), data);
+        })
+        if(window.location.hash) {
+          $("a[href=" + window.location.hash + "]").parent().addClass("active");
+          display_project(window.location.hash.substring(1), data);
+        }
+      }
+    });
+  });
+
+</script>
