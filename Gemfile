@@ -27,11 +27,14 @@
 #
 # bundle exec awestruct -s
 
-source :rubygems
+source 'https://rubygems.org'
 
-gem "awestruct", "0.4.9", :path => '/home/aslak/dev/source/testing/awestruct'
-gem 'rb-inotify', '~> 0.8.8'
 
+#gem "awestruct", "0.4.9", :path => '/home/aslak/dev/source/testing/awestruct'
+gem "awestruct", "0.5.0"
+gem 'rb-inotify'
+
+gem "redcarpet"
 gem 'therubyracer', '~> 0.10.0', :platforms => 'ruby'
 gem 'therubyrhino', '~> 1.73', :platforms => 'jruby'
 
