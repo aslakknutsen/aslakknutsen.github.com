@@ -10,3 +10,6 @@ TODO
 .awestruct
 Gemfile.lock
 Guardfile
+.github-auth
+.ruby-version
+.ruby-gemset
