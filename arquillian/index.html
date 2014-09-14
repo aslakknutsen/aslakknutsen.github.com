@@ -161,9 +161,22 @@
       content += '<h3>' + repo.name + ' <small>' + repo.git + '</small></h3>'
       content += '<div class="col-md-8">'
       content += '<div class="row dependencies">'
+      
+      repo.dependencies.sort(function(a, b) {
+        if(a.name > b.name) {
+          return 1
+        }
+        if(a.name < b.name) {
+          return -1
+        }
+        return 0
+      })
+
       repo.dependencies.forEach(function(dep) {
-        content += '<div class="col-md-6 name">' + dep.name + '</div>'
-        content += '<div class="col-md-6 version">' + (dep.version == null ? 'n/a':dep.version) + '</div>'
+        if(dep.name !== 'Other' && dep.name !== 'Internal') {
+          content += '<div class="col-md-6 name">' + dep.name + '</div>'
+          content += '<div class="col-md-6 version">' + (dep.version == null ? 'n/a':dep.version) + '</div>'
+        }
       })
       content += '</div>'
       content += '</div>'
