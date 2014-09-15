@@ -58,7 +58,7 @@
           }
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 4,
           "deployments": 1,
           "tests": 1,
@@ -149,7 +149,7 @@
           }
         ],
         "sum": {
-          "runwith": 6,
+          "classes": 6,
           "assertions": 91,
           "deployments": 6,
           "tests": 27,
@@ -240,7 +240,7 @@
           }
         ],
         "sum": {
-          "runwith": 21,
+          "classes": 21,
           "assertions": 89,
           "deployments": 21,
           "tests": 38,
@@ -303,7 +303,7 @@
           }
         ],
         "sum": {
-          "runwith": 131,
+          "classes": 131,
           "assertions": 2189,
           "deployments": 132,
           "tests": 759,
@@ -370,7 +370,7 @@
           }
         ],
         "sum": {
-          "runwith": 7,
+          "classes": 7,
           "assertions": 79,
           "deployments": 11,
           "tests": 26,
@@ -433,7 +433,7 @@
           }
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 7,
           "deployments": 1,
           "tests": 4,
@@ -442,7 +442,7 @@
       }
     ],
     "sum": {
-      "runwith": 167,
+      "classes": 167,
       "assertions": 2459,
       "deployments": 172,
       "tests": 855,
@@ -508,7 +508,7 @@
           }
         ],
         "sum": {
-          "runwith": 4,
+          "classes": 4,
           "assertions": 37,
           "deployments": 6,
           "tests": 4,
@@ -683,7 +683,7 @@
           }
         ],
         "sum": {
-          "runwith": 22,
+          "classes": 22,
           "assertions": 275,
           "deployments": 15,
           "tests": 47,
@@ -692,7 +692,7 @@
       }
     ],
     "sum": {
-      "runwith": 26,
+      "classes": 26,
       "assertions": 312,
       "deployments": 21,
       "tests": 51,
@@ -772,7 +772,7 @@
           }
         ],
         "sum": {
-          "runwith": 10,
+          "classes": 10,
           "assertions": 277,
           "deployments": 10,
           "tests": 57,
@@ -781,7 +781,7 @@
       }
     ],
     "sum": {
-      "runwith": 10,
+      "classes": 10,
       "assertions": 277,
       "deployments": 10,
       "tests": 57,
@@ -855,20 +855,20 @@
           }
         ],
         "sum": {
-          "runwith": 81,
+          "classes": 81,
           "assertions": 660,
-          "deployments": 229,
+          "deployments": 227,
           "tests": 213,
-          "lines": 11838
+          "lines": 11804
         }
       }
     ],
     "sum": {
-      "runwith": 81,
+      "classes": 81,
       "assertions": 660,
-      "deployments": 229,
+      "deployments": 227,
       "tests": 213,
-      "lines": 11838
+      "lines": 11804
     }
   },
   {
@@ -1004,7 +1004,7 @@
           }
         ],
         "sum": {
-          "runwith": 142,
+          "classes": 142,
           "assertions": 3232,
           "deployments": 168,
           "tests": 913,
@@ -1115,7 +1115,7 @@
           }
         ],
         "sum": {
-          "runwith": 133,
+          "classes": 133,
           "assertions": 2516,
           "deployments": 150,
           "tests": 684,
@@ -1124,7 +1124,7 @@
       }
     ],
     "sum": {
-      "runwith": 275,
+      "classes": 275,
       "assertions": 5748,
       "deployments": 318,
       "tests": 1597,
@@ -1190,7 +1190,7 @@
           }
         ],
         "sum": {
-          "runwith": 2,
+          "classes": 2,
           "assertions": 15,
           "deployments": 2,
           "tests": 7,
@@ -1291,7 +1291,7 @@
           }
         ],
         "sum": {
-          "runwith": 48,
+          "classes": 48,
           "assertions": 493,
           "deployments": 49,
           "tests": 148,
@@ -1354,7 +1354,7 @@
           }
         ],
         "sum": {
-          "runwith": 32,
+          "classes": 32,
           "assertions": 170,
           "deployments": 32,
           "tests": 64,
@@ -1437,7 +1437,7 @@
           }
         ],
         "sum": {
-          "runwith": 3,
+          "classes": 3,
           "assertions": 62,
           "deployments": 4,
           "tests": 4,
@@ -1490,7 +1490,7 @@
           }
         ],
         "sum": {
-          "runwith": 4,
+          "classes": 4,
           "assertions": 69,
           "deployments": 4,
           "tests": 10,
@@ -1499,7 +1499,7 @@
       }
     ],
     "sum": {
-      "runwith": 89,
+      "classes": 89,
       "assertions": 809,
       "deployments": 91,
       "tests": 233,
@@ -1559,7 +1559,7 @@
           }
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 32,
           "deployments": 1,
           "tests": 14,
@@ -1568,11 +1568,208 @@
       }
     ],
     "sum": {
-      "runwith": 1,
+      "classes": 1,
       "assertions": 32,
       "deployments": 1,
       "tests": 14,
       "lines": 628
+    }
+  },
+  {
+    "name": "JavaEE Samples",
+    "repos": [
+      {
+        "name": "javaee7-samples",
+        "git": "git@github.com:javaee-samples/javaee7-samples.git",
+        "dependencies": [
+          {
+            "name": "ShrinkWrap Descriptors",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-impl-javaee"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Persistence",
+            "version": "1.0.0.Alpha6",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-persistence-impl"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Rest",
+            "version": "1.0.0.Alpha1",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-rest-client-api"
+              },
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-rest-client-impl-3x"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Graphene",
+            "version": "2.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.graphene",
+                "artifactid": "graphene-webdriver"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Spock",
+            "version": "1.0.0.Beta2",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.spock",
+                "artifactid": "arquillian-spock-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.1.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              },
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven-archive"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Drone",
+            "version": "1.3.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-bom"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Drone Selenium",
+            "version": "2.40.0",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.selenium",
+                "artifactid": "selenium-bom"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Embedded",
+            "version": "8.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-embedded"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Managed",
+            "version": "8.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Remote",
+            "version": "8.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Embedded 3.1",
+            "version": "1.0.0.CR4",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-embedded-3.1"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Remote 3.1",
+            "version": "1.0.0.CR4",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-remote-3.1"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "classes": 139,
+          "assertions": 859,
+          "deployments": 140,
+          "tests": 320,
+          "lines": 9072
+        }
+      }
+    ],
+    "sum": {
+      "classes": 139,
+      "assertions": 859,
+      "deployments": 140,
+      "tests": 320,
+      "lines": 9072
     }
   },
   {
@@ -1682,7 +1879,7 @@
           }
         ],
         "sum": {
-          "runwith": 84,
+          "classes": 84,
           "assertions": 1515,
           "deployments": 46,
           "tests": 420,
@@ -1777,7 +1974,7 @@
           }
         ],
         "sum": {
-          "runwith": 3,
+          "classes": 3,
           "assertions": 35,
           "deployments": 0,
           "tests": 11,
@@ -1830,7 +2027,7 @@
           }
         ],
         "sum": {
-          "runwith": 2,
+          "classes": 2,
           "assertions": 18,
           "deployments": 2,
           "tests": 5,
@@ -1839,7 +2036,7 @@
       }
     ],
     "sum": {
-      "runwith": 89,
+      "classes": 89,
       "assertions": 1568,
       "deployments": 48,
       "tests": 436,
@@ -1856,7 +2053,7 @@
 
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 44,
           "deployments": 3,
           "tests": 13,
@@ -1879,7 +2076,7 @@
           }
         ],
         "sum": {
-          "runwith": 41,
+          "classes": 41,
           "assertions": 232,
           "deployments": 85,
           "tests": 68,
@@ -1893,7 +2090,7 @@
 
         ],
         "sum": {
-          "runwith": 2,
+          "classes": 2,
           "assertions": 35,
           "deployments": 0,
           "tests": 2,
@@ -1930,7 +2127,7 @@
           }
         ],
         "sum": {
-          "runwith": 9,
+          "classes": 9,
           "assertions": 166,
           "deployments": 0,
           "tests": 22,
@@ -1953,7 +2150,7 @@
           }
         ],
         "sum": {
-          "runwith": 9,
+          "classes": 9,
           "assertions": 220,
           "deployments": 9,
           "tests": 91,
@@ -1976,7 +2173,7 @@
           }
         ],
         "sum": {
-          "runwith": 2,
+          "classes": 2,
           "assertions": 12,
           "deployments": 2,
           "tests": 2,
@@ -1999,7 +2196,7 @@
           }
         ],
         "sum": {
-          "runwith": 7,
+          "classes": 7,
           "assertions": 84,
           "deployments": 17,
           "tests": 14,
@@ -2022,7 +2219,7 @@
           }
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 2,
           "deployments": 1,
           "tests": 1,
@@ -2036,7 +2233,7 @@
 
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 38,
           "deployments": 2,
           "tests": 8,
@@ -2069,7 +2266,7 @@
           }
         ],
         "sum": {
-          "runwith": 9,
+          "classes": 9,
           "assertions": 262,
           "deployments": 9,
           "tests": 74,
@@ -2106,7 +2303,7 @@
           }
         ],
         "sum": {
-          "runwith": 168,
+          "classes": 168,
           "assertions": 2475,
           "deployments": 169,
           "tests": 565,
@@ -2120,7 +2317,7 @@
 
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 44,
           "deployments": 0,
           "tests": 5,
@@ -2157,7 +2354,7 @@
           }
         ],
         "sum": {
-          "runwith": 5,
+          "classes": 5,
           "assertions": 90,
           "deployments": 0,
           "tests": 13,
@@ -2171,7 +2368,7 @@
 
         ],
         "sum": {
-          "runwith": 2,
+          "classes": 2,
           "assertions": 39,
           "deployments": 4,
           "tests": 35,
@@ -2240,7 +2437,7 @@
           }
         ],
         "sum": {
-          "runwith": 36,
+          "classes": 36,
           "assertions": 121,
           "deployments": 77,
           "tests": 56,
@@ -2263,7 +2460,7 @@
           }
         ],
         "sum": {
-          "runwith": 3,
+          "classes": 3,
           "assertions": 63,
           "deployments": 3,
           "tests": 20,
@@ -2272,7 +2469,7 @@
       }
     ],
     "sum": {
-      "runwith": 297,
+      "classes": 297,
       "assertions": 3927,
       "deployments": 381,
       "tests": 989,
@@ -2498,7 +2695,7 @@
           }
         ],
         "sum": {
-          "runwith": 126,
+          "classes": 126,
           "assertions": 1266,
           "deployments": 135,
           "tests": 305,
@@ -2507,7 +2704,7 @@
       }
     ],
     "sum": {
-      "runwith": 126,
+      "classes": 126,
       "assertions": 1266,
       "deployments": 135,
       "tests": 305,
@@ -2591,7 +2788,7 @@
           }
         ],
         "sum": {
-          "runwith": 66,
+          "classes": 66,
           "assertions": 661,
           "deployments": 69,
           "tests": 148,
@@ -2600,7 +2797,7 @@
       }
     ],
     "sum": {
-      "runwith": 66,
+      "classes": 66,
       "assertions": 661,
       "deployments": 69,
       "tests": 148,
@@ -2736,7 +2933,7 @@
           }
         ],
         "sum": {
-          "runwith": 902,
+          "classes": 902,
           "assertions": 6103,
           "deployments": 1069,
           "tests": 2485,
@@ -2745,7 +2942,7 @@
       }
     ],
     "sum": {
-      "runwith": 902,
+      "classes": 902,
       "assertions": 6103,
       "deployments": 1069,
       "tests": 2485,
@@ -2762,7 +2959,7 @@
 
         ],
         "sum": {
-          "runwith": 3,
+          "classes": 3,
           "assertions": 62,
           "deployments": 3,
           "tests": 11,
@@ -2825,7 +3022,7 @@
           }
         ],
         "sum": {
-          "runwith": 6,
+          "classes": 6,
           "assertions": 43,
           "deployments": 6,
           "tests": 20,
@@ -3082,7 +3279,7 @@
           }
         ],
         "sum": {
-          "runwith": 171,
+          "classes": 171,
           "assertions": 873,
           "deployments": 174,
           "tests": 467,
@@ -3341,7 +3538,7 @@
           }
         ],
         "sum": {
-          "runwith": 321,
+          "classes": 321,
           "assertions": 6495,
           "deployments": 20,
           "tests": 2897,
@@ -3355,7 +3552,7 @@
 
         ],
         "sum": {
-          "runwith": 3,
+          "classes": 3,
           "assertions": 20,
           "deployments": 3,
           "tests": 8,
@@ -3364,7 +3561,7 @@
       }
     ],
     "sum": {
-      "runwith": 504,
+      "classes": 504,
       "assertions": 7493,
       "deployments": 206,
       "tests": 3403,
@@ -3552,7 +3749,7 @@
           }
         ],
         "sum": {
-          "runwith": 51,
+          "classes": 51,
           "assertions": 198,
           "deployments": 54,
           "tests": 84,
@@ -3585,7 +3782,7 @@
           }
         ],
         "sum": {
-          "runwith": 5,
+          "classes": 5,
           "assertions": 33,
           "deployments": 5,
           "tests": 7,
@@ -3594,7 +3791,7 @@
       }
     ],
     "sum": {
-      "runwith": 56,
+      "classes": 56,
       "assertions": 231,
       "deployments": 59,
       "tests": 91,
@@ -3648,7 +3845,7 @@
           }
         ],
         "sum": {
-          "runwith": 8,
+          "classes": 8,
           "assertions": 152,
           "deployments": 0,
           "tests": 31,
@@ -3657,7 +3854,7 @@
       }
     ],
     "sum": {
-      "runwith": 8,
+      "classes": 8,
       "assertions": 152,
       "deployments": 0,
       "tests": 31,
@@ -3789,7 +3986,7 @@
           }
         ],
         "sum": {
-          "runwith": 0,
+          "classes": 0,
           "assertions": 189,
           "deployments": 33,
           "tests": 90,
@@ -3840,7 +4037,7 @@
           }
         ],
         "sum": {
-          "runwith": 8,
+          "classes": 8,
           "assertions": 323,
           "deployments": 8,
           "tests": 157,
@@ -3987,7 +4184,7 @@
           }
         ],
         "sum": {
-          "runwith": 47,
+          "classes": 47,
           "assertions": 583,
           "deployments": 48,
           "tests": 124,
@@ -4092,7 +4289,7 @@
           }
         ],
         "sum": {
-          "runwith": 6,
+          "classes": 6,
           "assertions": 16,
           "deployments": 22,
           "tests": 20,
@@ -4101,7 +4298,7 @@
       }
     ],
     "sum": {
-      "runwith": 61,
+      "classes": 61,
       "assertions": 1111,
       "deployments": 111,
       "tests": 391,
@@ -4165,7 +4362,7 @@
           }
         ],
         "sum": {
-          "runwith": 16,
+          "classes": 16,
           "assertions": 108,
           "deployments": 18,
           "tests": 109,
@@ -4174,7 +4371,7 @@
       }
     ],
     "sum": {
-      "runwith": 16,
+      "classes": 16,
       "assertions": 108,
       "deployments": 18,
       "tests": 109,
@@ -4270,7 +4467,7 @@
           }
         ],
         "sum": {
-          "runwith": 5,
+          "classes": 5,
           "assertions": 108,
           "deployments": 0,
           "tests": 12,
@@ -4279,7 +4476,7 @@
       }
     ],
     "sum": {
-      "runwith": 5,
+      "classes": 5,
       "assertions": 108,
       "deployments": 0,
       "tests": 12,
@@ -4339,11 +4536,11 @@
           }
         ],
         "sum": {
-          "runwith": 2,
-          "assertions": 84,
-          "deployments": 21,
-          "tests": 11,
-          "lines": 784
+          "classes": 2,
+          "assertions": 7,
+          "deployments": 2,
+          "tests": 3,
+          "lines": 232
         }
       },
       {
@@ -4410,11 +4607,11 @@
           }
         ],
         "sum": {
-          "runwith": 18,
-          "assertions": 345,
-          "deployments": 90,
-          "tests": 72,
-          "lines": 3808
+          "classes": 18,
+          "assertions": 117,
+          "deployments": 18,
+          "tests": 33,
+          "lines": 1697
         }
       },
       {
@@ -4443,11 +4640,11 @@
           }
         ],
         "sum": {
-          "runwith": 4,
-          "assertions": 105,
-          "deployments": 20,
-          "tests": 10,
-          "lines": 1211
+          "classes": 4,
+          "assertions": 40,
+          "deployments": 4,
+          "tests": 4,
+          "lines": 546
         }
       },
       {
@@ -4520,11 +4717,11 @@
           }
         ],
         "sum": {
-          "runwith": 3,
-          "assertions": 1374,
-          "deployments": 351,
-          "tests": 56,
-          "lines": 8819
+          "classes": 3,
+          "assertions": 11,
+          "deployments": 3,
+          "tests": 3,
+          "lines": 119
         }
       },
       {
@@ -4577,7 +4774,7 @@
           }
         ],
         "sum": {
-          "runwith": 7,
+          "classes": 7,
           "assertions": 35,
           "deployments": 7,
           "tests": 13,
@@ -4662,7 +4859,7 @@
           }
         ],
         "sum": {
-          "runwith": 28,
+          "classes": 28,
           "assertions": 158,
           "deployments": 33,
           "tests": 53,
@@ -4676,11 +4873,11 @@
 
         ],
         "sum": {
-          "runwith": 1,
-          "assertions": 4,
-          "deployments": 3,
-          "tests": 3,
-          "lines": 138
+          "classes": 1,
+          "assertions": 2,
+          "deployments": 1,
+          "tests": 1,
+          "lines": 66
         }
       },
       {
@@ -4817,20 +5014,20 @@
           }
         ],
         "sum": {
-          "runwith": 112,
-          "assertions": 12784,
-          "deployments": 2012,
-          "tests": 332,
-          "lines": 145023
+          "classes": 112,
+          "assertions": 531,
+          "deployments": 144,
+          "tests": 178,
+          "lines": 10072
         }
       }
     ],
     "sum": {
-      "runwith": 175,
-      "assertions": 14889,
-      "deployments": 2537,
-      "tests": 550,
-      "lines": 162434
+      "classes": 175,
+      "assertions": 901,
+      "deployments": 212,
+      "tests": 288,
+      "lines": 15383
     }
   },
   {
@@ -4950,7 +5147,7 @@
           }
         ],
         "sum": {
-          "runwith": 46,
+          "classes": 46,
           "assertions": 582,
           "deployments": 105,
           "tests": 158,
@@ -5003,7 +5200,7 @@
           }
         ],
         "sum": {
-          "runwith": 4,
+          "classes": 4,
           "assertions": 14,
           "deployments": 4,
           "tests": 8,
@@ -5026,7 +5223,7 @@
           }
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 28,
           "deployments": 1,
           "tests": 4,
@@ -5035,7 +5232,7 @@
       }
     ],
     "sum": {
-      "runwith": 51,
+      "classes": 51,
       "assertions": 624,
       "deployments": 110,
       "tests": 170,
@@ -5111,7 +5308,7 @@
           }
         ],
         "sum": {
-          "runwith": 0,
+          "classes": 0,
           "assertions": 161,
           "deployments": 18,
           "tests": 60,
@@ -5164,7 +5361,7 @@
           }
         ],
         "sum": {
-          "runwith": 8,
+          "classes": 8,
           "assertions": 46,
           "deployments": 8,
           "tests": 17,
@@ -5173,7 +5370,7 @@
       }
     ],
     "sum": {
-      "runwith": 8,
+      "classes": 8,
       "assertions": 207,
       "deployments": 26,
       "tests": 77,
@@ -5431,20 +5628,20 @@
           }
         ],
         "sum": {
-          "runwith": 113,
-          "assertions": 482,
-          "deployments": 117,
-          "tests": 238,
-          "lines": 8189
+          "classes": 119,
+          "assertions": 502,
+          "deployments": 123,
+          "tests": 243,
+          "lines": 8480
         }
       }
     ],
     "sum": {
-      "runwith": 113,
-      "assertions": 482,
-      "deployments": 117,
-      "tests": 238,
-      "lines": 8189
+      "classes": 119,
+      "assertions": 502,
+      "deployments": 123,
+      "tests": 243,
+      "lines": 8480
     }
   },
   {
@@ -5574,7 +5771,7 @@
           }
         ],
         "sum": {
-          "runwith": 15,
+          "classes": 15,
           "assertions": 352,
           "deployments": 30,
           "tests": 129,
@@ -5583,7 +5780,7 @@
       }
     ],
     "sum": {
-      "runwith": 15,
+      "classes": 15,
       "assertions": 352,
       "deployments": 30,
       "tests": 129,
@@ -5643,7 +5840,7 @@
           }
         ],
         "sum": {
-          "runwith": 22,
+          "classes": 22,
           "assertions": 1304,
           "deployments": 22,
           "tests": 152,
@@ -5686,7 +5883,7 @@
           }
         ],
         "sum": {
-          "runwith": 14,
+          "classes": 14,
           "assertions": 130,
           "deployments": 14,
           "tests": 52,
@@ -5969,7 +6166,7 @@
           }
         ],
         "sum": {
-          "runwith": 8,
+          "classes": 8,
           "assertions": 0,
           "deployments": 8,
           "tests": 48,
@@ -6052,7 +6249,7 @@
           }
         ],
         "sum": {
-          "runwith": 4,
+          "classes": 4,
           "assertions": 16,
           "deployments": 5,
           "tests": 4,
@@ -6095,7 +6292,7 @@
           }
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 2,
           "deployments": 1,
           "tests": 1,
@@ -6224,7 +6421,7 @@
           }
         ],
         "sum": {
-          "runwith": 15,
+          "classes": 15,
           "assertions": 7,
           "deployments": 15,
           "tests": 225,
@@ -6291,7 +6488,7 @@
           }
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 20,
           "deployments": 1,
           "tests": 12,
@@ -6334,7 +6531,7 @@
           }
         ],
         "sum": {
-          "runwith": 3,
+          "classes": 3,
           "assertions": 18,
           "deployments": 3,
           "tests": 3,
@@ -6343,7 +6540,7 @@
       }
     ],
     "sum": {
-      "runwith": 68,
+      "classes": 68,
       "assertions": 1497,
       "deployments": 69,
       "tests": 497,
@@ -6579,11 +6776,11 @@
           }
         ],
         "sum": {
-          "runwith": 629,
-          "assertions": 2922,
-          "deployments": 634,
-          "tests": 1051,
-          "lines": 33208
+          "classes": 630,
+          "assertions": 2928,
+          "deployments": 635,
+          "tests": 1055,
+          "lines": 33273
         }
       },
       {
@@ -6622,7 +6819,7 @@
           }
         ],
         "sum": {
-          "runwith": 688,
+          "classes": 688,
           "assertions": 4219,
           "deployments": 696,
           "tests": 1680,
@@ -6631,11 +6828,11 @@
       }
     ],
     "sum": {
-      "runwith": 1317,
-      "assertions": 7141,
-      "deployments": 1330,
-      "tests": 2731,
-      "lines": 174678
+      "classes": 1318,
+      "assertions": 7147,
+      "deployments": 1331,
+      "tests": 2735,
+      "lines": 174743
     }
   },
   {
@@ -6773,7 +6970,7 @@
           }
         ],
         "sum": {
-          "runwith": 11,
+          "classes": 11,
           "assertions": 53,
           "deployments": 11,
           "tests": 27,
@@ -6848,7 +7045,7 @@
           }
         ],
         "sum": {
-          "runwith": 4,
+          "classes": 4,
           "assertions": 50,
           "deployments": 4,
           "tests": 21,
@@ -6891,7 +7088,7 @@
           }
         ],
         "sum": {
-          "runwith": 3,
+          "classes": 3,
           "assertions": 3,
           "deployments": 9,
           "tests": 3,
@@ -6968,7 +7165,7 @@
           }
         ],
         "sum": {
-          "runwith": 132,
+          "classes": 132,
           "assertions": 1133,
           "deployments": 138,
           "tests": 489,
@@ -6977,7 +7174,7 @@
       }
     ],
     "sum": {
-      "runwith": 150,
+      "classes": 150,
       "assertions": 1239,
       "deployments": 162,
       "tests": 540,
@@ -7133,7 +7330,7 @@
           }
         ],
         "sum": {
-          "runwith": 20,
+          "classes": 20,
           "assertions": 187,
           "deployments": 40,
           "tests": 32,
@@ -7142,7 +7339,7 @@
       }
     ],
     "sum": {
-      "runwith": 20,
+      "classes": 20,
       "assertions": 187,
       "deployments": 40,
       "tests": 32,
@@ -7168,7 +7365,7 @@
           }
         ],
         "sum": {
-          "runwith": 40,
+          "classes": 40,
           "assertions": 262,
           "deployments": 41,
           "tests": 59,
@@ -7191,7 +7388,7 @@
           }
         ],
         "sum": {
-          "runwith": 1,
+          "classes": 1,
           "assertions": 1,
           "deployments": 1,
           "tests": 1,
@@ -7214,7 +7411,7 @@
           }
         ],
         "sum": {
-          "runwith": 2,
+          "classes": 2,
           "assertions": 8,
           "deployments": 2,
           "tests": 2,
@@ -7223,7 +7420,7 @@
       }
     ],
     "sum": {
-      "runwith": 43,
+      "classes": 43,
       "assertions": 271,
       "deployments": 44,
       "tests": 62,
