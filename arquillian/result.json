@@ -1121,14 +1121,37 @@
           "tests": 684,
           "lines": 33580
         }
+      },
+      {
+        "name": "tattletale",
+        "git": "git@github.com:capedwarf/tattletale.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "classes": 1,
+          "assertions": 0,
+          "deployments": 1,
+          "tests": 1,
+          "lines": 90
+        }
       }
     ],
     "sum": {
-      "classes": 275,
+      "classes": 276,
       "assertions": 5748,
-      "deployments": 318,
-      "tests": 1597,
-      "lines": 96202
+      "deployments": 319,
+      "tests": 1598,
+      "lines": 96292
     }
   },
   {
@@ -5237,6 +5260,84 @@
       "deployments": 110,
       "tests": 170,
       "lines": 8665
+    }
+  },
+  {
+    "name": "Agorava",
+    "repos": [
+      {
+        "name": "agorava-twitter",
+        "git": "https://github.com/agorava/agorava-twitter",
+        "dependencies": [
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-depchain"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "classes": 1,
+          "assertions": 6,
+          "deployments": 2,
+          "tests": 6,
+          "lines": 202
+        }
+      },
+      {
+        "name": "agorava-core",
+        "git": "git@github.com:agorava/agorava-core.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-depchain"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "classes": 3,
+          "assertions": 15,
+          "deployments": 3,
+          "tests": 12,
+          "lines": 268
+        }
+      }
+    ],
+    "sum": {
+      "classes": 4,
+      "assertions": 21,
+      "deployments": 5,
+      "tests": 18,
+      "lines": 470
     }
   },
   {
