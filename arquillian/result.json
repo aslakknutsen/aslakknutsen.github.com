@@ -150,10 +150,10 @@
         ],
         "sum": {
           "runwith": 6,
-          "assertions": 6,
+          "assertions": 91,
           "deployments": 6,
-          "tests": 2,
-          "lines": 442
+          "tests": 27,
+          "lines": 832
         }
       },
       {
@@ -244,7 +244,7 @@
           "assertions": 89,
           "deployments": 21,
           "tests": 38,
-          "lines": 1727
+          "lines": 1301
         }
       },
       {
@@ -307,7 +307,7 @@
           "assertions": 2189,
           "deployments": 132,
           "tests": 759,
-          "lines": 25514
+          "lines": 22697
         }
       },
       {
@@ -371,10 +371,10 @@
         ],
         "sum": {
           "runwith": 7,
-          "assertions": 35,
+          "assertions": 79,
           "deployments": 11,
-          "tests": 12,
-          "lines": 730
+          "tests": 26,
+          "lines": 900
         }
       },
       {
@@ -437,16 +437,16 @@
           "assertions": 7,
           "deployments": 1,
           "tests": 4,
-          "lines": 170
+          "lines": 164
         }
       }
     ],
     "sum": {
       "runwith": 167,
-      "assertions": 2330,
+      "assertions": 2459,
       "deployments": 172,
-      "tests": 816,
-      "lines": 28644
+      "tests": 855,
+      "lines": 25955
     }
   },
   {
@@ -510,9 +510,9 @@
         "sum": {
           "runwith": 4,
           "assertions": 37,
-          "deployments": 2,
+          "deployments": 6,
           "tests": 4,
-          "lines": 324
+          "lines": 379
         }
       },
       {
@@ -687,16 +687,16 @@
           "assertions": 275,
           "deployments": 15,
           "tests": 47,
-          "lines": 3619
+          "lines": 3088
         }
       }
     ],
     "sum": {
       "runwith": 26,
       "assertions": 312,
-      "deployments": 17,
+      "deployments": 21,
       "tests": 51,
-      "lines": 3943
+      "lines": 3467
     }
   },
   {
@@ -776,7 +776,7 @@
           "assertions": 277,
           "deployments": 10,
           "tests": 57,
-          "lines": 3533
+          "lines": 3203
         }
       }
     ],
@@ -785,7 +785,7 @@
       "assertions": 277,
       "deployments": 10,
       "tests": 57,
-      "lines": 3533
+      "lines": 3203
     }
   },
   {
@@ -857,18 +857,18 @@
         "sum": {
           "runwith": 81,
           "assertions": 660,
-          "deployments": 227,
+          "deployments": 229,
           "tests": 213,
-          "lines": 14239
+          "lines": 11838
         }
       }
     ],
     "sum": {
       "runwith": 81,
       "assertions": 660,
-      "deployments": 227,
+      "deployments": 229,
       "tests": 213,
-      "lines": 14239
+      "lines": 11838
     }
   },
   {
@@ -1008,7 +1008,7 @@
           "assertions": 3232,
           "deployments": 168,
           "tests": 913,
-          "lines": 73516
+          "lines": 62622
         }
       },
       {
@@ -1119,7 +1119,7 @@
           "assertions": 2516,
           "deployments": 150,
           "tests": 684,
-          "lines": 42022
+          "lines": 33580
         }
       }
     ],
@@ -1128,7 +1128,7 @@
       "assertions": 5748,
       "deployments": 318,
       "tests": 1597,
-      "lines": 115538
+      "lines": 96202
     }
   },
   {
@@ -1194,7 +1194,7 @@
           "assertions": 15,
           "deployments": 2,
           "tests": 7,
-          "lines": 284
+          "lines": 220
         }
       },
       {
@@ -1295,7 +1295,7 @@
           "assertions": 493,
           "deployments": 49,
           "tests": 148,
-          "lines": 7032
+          "lines": 5027
         }
       },
       {
@@ -1358,7 +1358,7 @@
           "assertions": 170,
           "deployments": 32,
           "tests": 64,
-          "lines": 3012
+          "lines": 2127
         }
       },
       {
@@ -1441,7 +1441,7 @@
           "assertions": 62,
           "deployments": 4,
           "tests": 4,
-          "lines": 648
+          "lines": 578
         }
       },
       {
@@ -1494,7 +1494,7 @@
           "assertions": 69,
           "deployments": 4,
           "tests": 10,
-          "lines": 607
+          "lines": 530
         }
       }
     ],
@@ -1503,7 +1503,7 @@
       "assertions": 809,
       "deployments": 91,
       "tests": 233,
-      "lines": 11583
+      "lines": 8482
     }
   },
   {
@@ -1563,7 +1563,7 @@
           "assertions": 32,
           "deployments": 1,
           "tests": 14,
-          "lines": 638
+          "lines": 628
         }
       }
     ],
@@ -1572,7 +1572,7 @@
       "assertions": 32,
       "deployments": 1,
       "tests": 14,
-      "lines": 638
+      "lines": 628
     }
   },
   {
@@ -1683,10 +1683,10 @@
         ],
         "sum": {
           "runwith": 84,
-          "assertions": 1439,
+          "assertions": 1515,
           "deployments": 46,
-          "tests": 372,
-          "lines": 14595
+          "tests": 420,
+          "lines": 14380
         }
       },
       {
@@ -1781,7 +1781,7 @@
           "assertions": 35,
           "deployments": 0,
           "tests": 11,
-          "lines": 345
+          "lines": 276
         }
       },
       {
@@ -1834,16 +1834,16 @@
           "assertions": 18,
           "deployments": 2,
           "tests": 5,
-          "lines": 176
+          "lines": 123
         }
       }
     ],
     "sum": {
       "runwith": 89,
-      "assertions": 1492,
+      "assertions": 1568,
       "deployments": 48,
-      "tests": 388,
-      "lines": 15116
+      "tests": 436,
+      "lines": 14779
     }
   },
   {
@@ -1879,11 +1879,11 @@
           }
         ],
         "sum": {
-          "runwith": 40,
-          "assertions": 229,
-          "deployments": 83,
-          "tests": 67,
-          "lines": 3518
+          "runwith": 41,
+          "assertions": 232,
+          "deployments": 85,
+          "tests": 68,
+          "lines": 3226
         }
       },
       {
@@ -1897,7 +1897,7 @@
           "assertions": 35,
           "deployments": 0,
           "tests": 2,
-          "lines": 496
+          "lines": 413
         }
       },
       {
@@ -1930,11 +1930,11 @@
           }
         ],
         "sum": {
-          "runwith": 0,
-          "assertions": 0,
+          "runwith": 9,
+          "assertions": 166,
           "deployments": 0,
-          "tests": 0,
-          "lines": 0
+          "tests": 22,
+          "lines": 1335
         }
       },
       {
@@ -1957,7 +1957,7 @@
           "assertions": 220,
           "deployments": 9,
           "tests": 91,
-          "lines": 1655
+          "lines": 1568
         }
       },
       {
@@ -2003,7 +2003,7 @@
           "assertions": 84,
           "deployments": 17,
           "tests": 14,
-          "lines": 735
+          "lines": 675
         }
       },
       {
@@ -2040,7 +2040,7 @@
           "assertions": 38,
           "deployments": 2,
           "tests": 8,
-          "lines": 248
+          "lines": 205
         }
       },
       {
@@ -2073,7 +2073,7 @@
           "assertions": 262,
           "deployments": 9,
           "tests": 74,
-          "lines": 2150
+          "lines": 2066
         }
       },
       {
@@ -2110,7 +2110,7 @@
           "assertions": 2475,
           "deployments": 169,
           "tests": 565,
-          "lines": 22295
+          "lines": 20755
         }
       },
       {
@@ -2124,7 +2124,7 @@
           "assertions": 44,
           "deployments": 0,
           "tests": 5,
-          "lines": 937
+          "lines": 904
         }
       },
       {
@@ -2157,11 +2157,11 @@
           }
         ],
         "sum": {
-          "runwith": 0,
-          "assertions": 0,
+          "runwith": 5,
+          "assertions": 90,
           "deployments": 0,
-          "tests": 0,
-          "lines": 0
+          "tests": 13,
+          "lines": 723
         }
       },
       {
@@ -2175,7 +2175,7 @@
           "assertions": 39,
           "deployments": 4,
           "tests": 35,
-          "lines": 600
+          "lines": 563
         }
       },
       {
@@ -2244,7 +2244,7 @@
           "assertions": 121,
           "deployments": 77,
           "tests": 56,
-          "lines": 3375
+          "lines": 3126
         }
       },
       {
@@ -2267,16 +2267,16 @@
           "assertions": 63,
           "deployments": 3,
           "tests": 20,
-          "lines": 717
+          "lines": 670
         }
       }
     ],
     "sum": {
-      "runwith": 282,
-      "assertions": 3668,
-      "deployments": 379,
-      "tests": 953,
-      "lines": 37243
+      "runwith": 297,
+      "assertions": 3927,
+      "deployments": 381,
+      "tests": 989,
+      "lines": 36746
     }
   },
   {
@@ -2502,7 +2502,7 @@
           "assertions": 1266,
           "deployments": 135,
           "tests": 305,
-          "lines": 14390
+          "lines": 11359
         }
       }
     ],
@@ -2511,7 +2511,7 @@
       "assertions": 1266,
       "deployments": 135,
       "tests": 305,
-      "lines": 14390
+      "lines": 11359
     }
   },
   {
@@ -2595,7 +2595,7 @@
           "assertions": 661,
           "deployments": 69,
           "tests": 148,
-          "lines": 7208
+          "lines": 6406
         }
       }
     ],
@@ -2604,7 +2604,7 @@
       "assertions": 661,
       "deployments": 69,
       "tests": 148,
-      "lines": 7208
+      "lines": 6406
     }
   },
   {
@@ -2736,20 +2736,20 @@
           }
         ],
         "sum": {
-          "runwith": 898,
-          "assertions": 5941,
+          "runwith": 902,
+          "assertions": 6103,
           "deployments": 1069,
-          "tests": 2469,
-          "lines": 153788
+          "tests": 2485,
+          "lines": 112520
         }
       }
     ],
     "sum": {
-      "runwith": 898,
-      "assertions": 5941,
+      "runwith": 902,
+      "assertions": 6103,
       "deployments": 1069,
-      "tests": 2469,
-      "lines": 153788
+      "tests": 2485,
+      "lines": 112520
     }
   },
   {
@@ -2766,7 +2766,7 @@
           "assertions": 62,
           "deployments": 3,
           "tests": 11,
-          "lines": 502
+          "lines": 356
         }
       },
       {
@@ -2829,7 +2829,7 @@
           "assertions": 43,
           "deployments": 6,
           "tests": 20,
-          "lines": 924
+          "lines": 627
         }
       },
       {
@@ -3082,11 +3082,11 @@
           }
         ],
         "sum": {
-          "runwith": 162,
-          "assertions": 832,
-          "deployments": 165,
-          "tests": 448,
-          "lines": 33655
+          "runwith": 171,
+          "assertions": 873,
+          "deployments": 174,
+          "tests": 467,
+          "lines": 24563
         }
       },
       {
@@ -3345,7 +3345,7 @@
           "assertions": 6495,
           "deployments": 20,
           "tests": 2897,
-          "lines": 129575
+          "lines": 77475
         }
       },
       {
@@ -3359,16 +3359,16 @@
           "assertions": 20,
           "deployments": 3,
           "tests": 8,
-          "lines": 370
+          "lines": 252
         }
       }
     ],
     "sum": {
-      "runwith": 495,
-      "assertions": 7452,
-      "deployments": 197,
-      "tests": 3384,
-      "lines": 165026
+      "runwith": 504,
+      "assertions": 7493,
+      "deployments": 206,
+      "tests": 3403,
+      "lines": 103273
     }
   },
   {
@@ -3556,7 +3556,7 @@
           "assertions": 198,
           "deployments": 54,
           "tests": 84,
-          "lines": 4441
+          "lines": 3586
         }
       },
       {
@@ -3589,7 +3589,7 @@
           "assertions": 33,
           "deployments": 5,
           "tests": 7,
-          "lines": 694
+          "lines": 590
         }
       }
     ],
@@ -3598,7 +3598,7 @@
       "assertions": 231,
       "deployments": 59,
       "tests": 91,
-      "lines": 5135
+      "lines": 4176
     }
   },
   {
@@ -3652,7 +3652,7 @@
           "assertions": 152,
           "deployments": 0,
           "tests": 31,
-          "lines": 2019
+          "lines": 1253
         }
       }
     ],
@@ -3661,7 +3661,7 @@
       "assertions": 152,
       "deployments": 0,
       "tests": 31,
-      "lines": 2019
+      "lines": 1253
     }
   },
   {
@@ -3793,7 +3793,7 @@
           "assertions": 189,
           "deployments": 33,
           "tests": 90,
-          "lines": 2743
+          "lines": 2115
         }
       },
       {
@@ -3844,7 +3844,7 @@
           "assertions": 323,
           "deployments": 8,
           "tests": 157,
-          "lines": 5774
+          "lines": 5167
         }
       },
       {
@@ -3991,7 +3991,7 @@
           "assertions": 583,
           "deployments": 48,
           "tests": 124,
-          "lines": 8268
+          "lines": 5102
         }
       },
       {
@@ -4096,7 +4096,7 @@
           "assertions": 16,
           "deployments": 22,
           "tests": 20,
-          "lines": 1260
+          "lines": 792
         }
       }
     ],
@@ -4105,7 +4105,7 @@
       "assertions": 1111,
       "deployments": 111,
       "tests": 391,
-      "lines": 18045
+      "lines": 13176
     }
   },
   {
@@ -4167,18 +4167,18 @@
         "sum": {
           "runwith": 16,
           "assertions": 108,
-          "deployments": 16,
+          "deployments": 18,
           "tests": 109,
-          "lines": 2725
+          "lines": 2622
         }
       }
     ],
     "sum": {
       "runwith": 16,
       "assertions": 108,
-      "deployments": 16,
+      "deployments": 18,
       "tests": 109,
-      "lines": 2725
+      "lines": 2622
     }
   },
   {
@@ -4274,7 +4274,7 @@
           "assertions": 108,
           "deployments": 0,
           "tests": 12,
-          "lines": 1167
+          "lines": 1111
         }
       }
     ],
@@ -4283,7 +4283,554 @@
       "assertions": 108,
       "deployments": 0,
       "tests": 12,
-      "lines": 1167
+      "lines": 1111
+    }
+  },
+  {
+    "name": "Camunda",
+    "repos": [
+      {
+        "name": "camunda-bpm-examples",
+        "git": "git@github.com:camunda/camunda-bpm-examples.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.0.4.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.1.2.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              },
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 2,
+          "assertions": 84,
+          "deployments": 21,
+          "tests": 11,
+          "lines": 784
+        }
+      },
+      {
+        "name": "camunda-consulting",
+        "git": "git@github.com:camunda/camunda-consulting.git",
+        "dependencies": [
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.1.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.1.2.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              },
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": "2.0.0",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-depchain"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-bom"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.1.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 18,
+          "assertions": 345,
+          "deployments": 90,
+          "tests": 72,
+          "lines": 3808
+        }
+      },
+      {
+        "name": "camunda-bpm-camel",
+        "git": "git@github.com:camunda/camunda-bpm-camel.git",
+        "dependencies": [
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.1.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.0.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 4,
+          "assertions": 105,
+          "deployments": 20,
+          "tests": 10,
+          "lines": 1211
+        }
+      },
+      {
+        "name": "camunda-bpm-testing",
+        "git": "git@github.com:camunda/camunda-bpm-testing.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-api"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.0.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              },
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.1.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.1.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 3,
+          "assertions": 1374,
+          "deployments": 351,
+          "tests": 56,
+          "lines": 8819
+        }
+      },
+      {
+        "name": "camunda-bpm-webapp",
+        "git": "git@github.com:camunda/camunda-bpm-webapp.git",
+        "dependencies": [
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.0.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Tomcat Embedded 7",
+            "version": "1.0.0.CR5",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-tomcat-embedded-7"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 7,
+          "assertions": 35,
+          "deployments": 7,
+          "tests": 13,
+          "lines": 469
+        }
+      },
+      {
+        "name": "fox-platform",
+        "git": "git@github.com:camunda/fox-platform.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Weld EE Embedded 1.1",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-weld-ee-embedded-1.1"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.0.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Drone",
+            "version": "1.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-impl"
+              },
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-webdriver-depchain"
+              },
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-bom"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.0.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              },
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.1.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.1.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 28,
+          "assertions": 158,
+          "deployments": 33,
+          "tests": 53,
+          "lines": 2182
+        }
+      },
+      {
+        "name": "camunda-archetypes",
+        "git": "git@github.com:camunda/camunda-archetypes.git",
+        "dependencies": [
+
+        ],
+        "sum": {
+          "runwith": 1,
+          "assertions": 4,
+          "deployments": 3,
+          "tests": 3,
+          "lines": 138
+        }
+      },
+      {
+        "name": "camunda-bpm-platform",
+        "git": "git@github.com:camunda/camunda-bpm-platform.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.0.0.CR7",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Other",
+            "version": "1.0.0.CR2",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-openwebbeans-embedded-1"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Weld EE Embedded 1.1",
+            "version": "1.0.0.CR3",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-weld-ee-embedded-1.1"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": "2.0.0",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-depchain"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-bom"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Embedded 3.1",
+            "version": "1.0.0.CR3",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-embedded-3.1"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              },
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Domain Managed",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-domain-managed"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Managed",
+            "version": "8.1.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Domain Managed",
+            "version": "8.1.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-domain-managed"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Managed 3.1",
+            "version": "1.0.0.CR4",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-managed-3.1"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Tomcat Managed 7",
+            "version": "1.0.0.CR5",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-tomcat-managed-7"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 112,
+          "assertions": 12784,
+          "deployments": 2012,
+          "tests": 332,
+          "lines": 145023
+        }
+      }
+    ],
+    "sum": {
+      "runwith": 175,
+      "assertions": 14889,
+      "deployments": 2537,
+      "tests": 550,
+      "lines": 162434
     }
   },
   {
@@ -4407,7 +4954,7 @@
           "assertions": 582,
           "deployments": 105,
           "tests": 158,
-          "lines": 16506
+          "lines": 8009
         }
       },
       {
@@ -4460,7 +5007,7 @@
           "assertions": 14,
           "deployments": 4,
           "tests": 8,
-          "lines": 763
+          "lines": 416
         }
       },
       {
@@ -4483,7 +5030,7 @@
           "assertions": 28,
           "deployments": 1,
           "tests": 4,
-          "lines": 290
+          "lines": 240
         }
       }
     ],
@@ -4492,7 +5039,7 @@
       "assertions": 624,
       "deployments": 110,
       "tests": 170,
-      "lines": 17559
+      "lines": 8665
     }
   },
   {
@@ -4568,7 +5115,7 @@
           "assertions": 161,
           "deployments": 18,
           "tests": 60,
-          "lines": 2119
+          "lines": 1706
         }
       },
       {
@@ -4621,7 +5168,7 @@
           "assertions": 46,
           "deployments": 8,
           "tests": 17,
-          "lines": 588
+          "lines": 428
         }
       }
     ],
@@ -4630,7 +5177,7 @@
       "assertions": 207,
       "deployments": 26,
       "tests": 77,
-      "lines": 2707
+      "lines": 2134
     }
   },
   {
@@ -4886,18 +5433,18 @@
         "sum": {
           "runwith": 113,
           "assertions": 482,
-          "deployments": 115,
+          "deployments": 117,
           "tests": 238,
-          "lines": 10564
+          "lines": 8189
         }
       }
     ],
     "sum": {
       "runwith": 113,
       "assertions": 482,
-      "deployments": 115,
+      "deployments": 117,
       "tests": 238,
-      "lines": 10564
+      "lines": 8189
     }
   },
   {
@@ -5031,7 +5578,7 @@
           "assertions": 352,
           "deployments": 30,
           "tests": 129,
-          "lines": 4477
+          "lines": 3812
         }
       }
     ],
@@ -5040,7 +5587,7 @@
       "assertions": 352,
       "deployments": 30,
       "tests": 129,
-      "lines": 4477
+      "lines": 3812
     }
   },
   {
@@ -5100,7 +5647,7 @@
           "assertions": 1304,
           "deployments": 22,
           "tests": 152,
-          "lines": 9626
+          "lines": 7885
         }
       },
       {
@@ -5143,7 +5690,7 @@
           "assertions": 130,
           "deployments": 14,
           "tests": 52,
-          "lines": 1864
+          "lines": 1624
         }
       },
       {
@@ -5426,7 +5973,7 @@
           "assertions": 0,
           "deployments": 8,
           "tests": 48,
-          "lines": 1149
+          "lines": 1008
         }
       },
       {
@@ -5509,7 +6056,7 @@
           "assertions": 16,
           "deployments": 5,
           "tests": 4,
-          "lines": 316
+          "lines": 304
         }
       },
       {
@@ -5552,7 +6099,7 @@
           "assertions": 2,
           "deployments": 1,
           "tests": 1,
-          "lines": 227
+          "lines": 225
         }
       },
       {
@@ -5681,7 +6228,7 @@
           "assertions": 7,
           "deployments": 15,
           "tests": 225,
-          "lines": 3399
+          "lines": 3175
         }
       },
       {
@@ -5748,7 +6295,7 @@
           "assertions": 20,
           "deployments": 1,
           "tests": 12,
-          "lines": 565
+          "lines": 444
         }
       },
       {
@@ -5791,7 +6338,7 @@
           "assertions": 18,
           "deployments": 3,
           "tests": 3,
-          "lines": 436
+          "lines": 421
         }
       }
     ],
@@ -5800,7 +6347,7 @@
       "assertions": 1497,
       "deployments": 69,
       "tests": 497,
-      "lines": 17582
+      "lines": 15086
     }
   },
   {
@@ -6032,11 +6579,11 @@
           }
         ],
         "sum": {
-          "runwith": 628,
+          "runwith": 629,
           "assertions": 2922,
-          "deployments": 632,
-          "tests": 1050,
-          "lines": 44816
+          "deployments": 634,
+          "tests": 1051,
+          "lines": 33208
         }
       },
       {
@@ -6079,16 +6626,16 @@
           "assertions": 4219,
           "deployments": 696,
           "tests": 1680,
-          "lines": 189610
+          "lines": 141470
         }
       }
     ],
     "sum": {
-      "runwith": 1316,
+      "runwith": 1317,
       "assertions": 7141,
-      "deployments": 1328,
-      "tests": 2730,
-      "lines": 234426
+      "deployments": 1330,
+      "tests": 2731,
+      "lines": 174678
     }
   },
   {
@@ -6230,7 +6777,7 @@
           "assertions": 53,
           "deployments": 11,
           "tests": 27,
-          "lines": 1462
+          "lines": 1173
         }
       },
       {
@@ -6305,7 +6852,7 @@
           "assertions": 50,
           "deployments": 4,
           "tests": 21,
-          "lines": 750
+          "lines": 642
         }
       },
       {
@@ -6348,7 +6895,7 @@
           "assertions": 3,
           "deployments": 9,
           "tests": 3,
-          "lines": 972
+          "lines": 360
         }
       },
       {
@@ -6425,7 +6972,7 @@
           "assertions": 1133,
           "deployments": 138,
           "tests": 489,
-          "lines": 23442
+          "lines": 19628
         }
       }
     ],
@@ -6434,7 +6981,7 @@
       "assertions": 1239,
       "deployments": 162,
       "tests": 540,
-      "lines": 26626
+      "lines": 21803
     }
   },
   {
@@ -6590,7 +7137,7 @@
           "assertions": 187,
           "deployments": 40,
           "tests": 32,
-          "lines": 3371
+          "lines": 2762
         }
       }
     ],
@@ -6599,7 +7146,7 @@
       "assertions": 187,
       "deployments": 40,
       "tests": 32,
-      "lines": 3371
+      "lines": 2762
     }
   },
   {
@@ -6625,7 +7172,7 @@
           "assertions": 262,
           "deployments": 41,
           "tests": 59,
-          "lines": 5238
+          "lines": 5115
         }
       },
       {
@@ -6648,7 +7195,7 @@
           "assertions": 1,
           "deployments": 1,
           "tests": 1,
-          "lines": 53
+          "lines": 47
         }
       },
       {
@@ -6671,7 +7218,7 @@
           "assertions": 8,
           "deployments": 2,
           "tests": 2,
-          "lines": 156
+          "lines": 150
         }
       }
     ],
@@ -6680,7 +7227,7 @@
       "assertions": 271,
       "deployments": 44,
       "tests": 62,
-      "lines": 5447
+      "lines": 5312
     }
   }
 ]
