@@ -450,6 +450,256 @@
     }
   },
   {
+    "name": "FUSE",
+    "repos": [
+      {
+        "name": "camel",
+        "git": "git@github.com:apache/camel.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.0.0.CR7",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": "2.0.0-alpha-4",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Weld EE Embedded 1.1",
+            "version": "1.0.0.CR3",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-weld-ee-embedded-1.1"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 4,
+          "assertions": 37,
+          "deployments": 2,
+          "tests": 4,
+          "lines": 324
+        }
+      },
+      {
+        "name": "fabric8",
+        "git": "git@github.com:fabric8io/fabric8.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core",
+            "version": "1.1.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-test-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.test",
+                "artifactid": "arquillian-test-impl-base"
+              },
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              },
+              {
+                "groupid": "org.jboss.arquillian.testenricher",
+                "artifactid": "arquillian-testenricher-cdi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.testenricher",
+                "artifactid": "arquillian-testenricher-osgi"
+              }
+            ]
+          },
+          {
+            "name": "Other",
+            "version": "1.2.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-fabric8-common"
+              },
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-protocol-jmx"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.1.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Fabric8 Remote",
+            "version": "1.2.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-fabric8-remote"
+              }
+            ]
+          },
+          {
+            "name": "Fabric8 Docker",
+            "version": "1.2.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-fabric8-docker"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian OSGi Karaf Managed",
+            "version": "2.1.0.CR16",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-karaf-managed"
+              }
+            ]
+          },
+          {
+            "name": "Internal",
+            "version": "2.1.0.CR16",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.osgi",
+                "artifactid": "arquillian-osgi-bundle"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Tomcat Managed 7",
+            "version": "1.0.0.CR6",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-tomcat-managed-7"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Managed",
+            "version": "8.1.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap",
+            "version": "1.1.2",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-api"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-impl-base"
+              }
+            ]
+          },
+          {
+            "name": "Gravia Embedded",
+            "version": "1.1.0.Beta40",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.gravia",
+                "artifactid": "gravia-arquillian-container-embedded"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Standalone",
+            "version": "1.1.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-standalone"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": "2.0.0",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-depchain"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 22,
+          "assertions": 275,
+          "deployments": 15,
+          "tests": 47,
+          "lines": 3619
+        }
+      }
+    ],
+    "sum": {
+      "runwith": 26,
+      "assertions": 312,
+      "deployments": 17,
+      "tests": 51,
+      "lines": 3943
+    }
+  },
+  {
     "name": "Errai",
     "repos": [
       {
@@ -2027,6 +2277,241 @@
       "deployments": 379,
       "tests": 953,
       "lines": 37243
+    }
+  },
+  {
+    "name": "Apache DeltaSpike",
+    "repos": [
+      {
+        "name": "deltaspike",
+        "git": "git@github.com:apache/deltaspike.git",
+        "dependencies": [
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": "1.0.1",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-bom"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Descriptors",
+            "version": "1.1.0-beta-1",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-impl-javaee"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-impl"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Drone",
+            "version": "1.1.0.CR3",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-api"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Warp",
+            "version": "1.0.0.Alpha1",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-warp-api"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Graphene",
+            "version": "2.0.0.Alpha2",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.graphene",
+                "artifactid": "graphene-webdriver"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.0.2.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              },
+              {
+                "groupid": "org.jboss.arquillian.testenricher",
+                "artifactid": "arquillian-testenricher-cdi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              },
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-test-spi"
+              }
+            ]
+          },
+          {
+            "name": "OpenWebBeans Embedded",
+            "version": "1.2.0",
+            "artifacts": [
+              {
+                "groupid": "org.apache.openwebbeans.arquillian",
+                "artifactid": "owb-arquillian-standalone"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Weld EE Embedded 1.1",
+            "version": "1.0.0.CR7",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-weld-ee-embedded-1.1"
+              }
+            ]
+          },
+          {
+            "name": "TomEE Remote",
+            "version": "1.6.0",
+            "artifacts": [
+              {
+                "groupid": "org.apache.openejb",
+                "artifactid": "arquillian-tomee-remote"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.1.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.1.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Managed",
+            "version": "8.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Remote",
+            "version": "8.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Remote 3.1",
+            "version": "1.0.0.CR4",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-remote-3.1"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian WebLogic Remote 12.1",
+            "version": "1.0.0.Alpha2",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-wls-remote-12.1"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Managed 3.1",
+            "version": "1.0.0.CR4",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-managed-3.1"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.0.2.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Jacoco",
+            "version": "1.0.0.Alpha3",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-jacoco"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap",
+            "version": "1.0.1",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-api"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 126,
+          "assertions": 1266,
+          "deployments": 135,
+          "tests": 305,
+          "lines": 14390
+        }
+      }
+    ],
+    "sum": {
+      "runwith": 126,
+      "assertions": 1266,
+      "deployments": 135,
+      "tests": 305,
+      "lines": 14390
     }
   },
   {
@@ -3624,193 +4109,6 @@
     }
   },
   {
-    "name": "Fabric8",
-    "repos": [
-      {
-        "name": "fabric8",
-        "git": "git@github.com:fabric8io/fabric8.git",
-        "dependencies": [
-          {
-            "name": "Arquillian Core",
-            "version": "1.1.1.Final",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.container",
-                "artifactid": "arquillian-container-spi"
-              },
-              {
-                "groupid": "org.jboss.arquillian.container",
-                "artifactid": "arquillian-container-test-spi"
-              },
-              {
-                "groupid": "org.jboss.arquillian.test",
-                "artifactid": "arquillian-test-impl-base"
-              },
-              {
-                "groupid": "org.jboss.arquillian",
-                "artifactid": "arquillian-bom"
-              },
-              {
-                "groupid": "org.jboss.arquillian.testenricher",
-                "artifactid": "arquillian-testenricher-cdi"
-              },
-              {
-                "groupid": "org.jboss.arquillian.testenricher",
-                "artifactid": "arquillian-testenricher-osgi"
-              }
-            ]
-          },
-          {
-            "name": "Other",
-            "version": "1.2.0-SNAPSHOT",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.container",
-                "artifactid": "arquillian-fabric8-common"
-              },
-              {
-                "groupid": "org.wildfly",
-                "artifactid": "wildfly-arquillian-protocol-jmx"
-              }
-            ]
-          },
-          {
-            "name": "Arquillian Core Junit Container",
-            "version": "1.1.1.Final",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.junit",
-                "artifactid": "arquillian-junit-container"
-              }
-            ]
-          },
-          {
-            "name": "Fabric8 Remote",
-            "version": "1.2.0-SNAPSHOT",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.container",
-                "artifactid": "arquillian-fabric8-remote"
-              }
-            ]
-          },
-          {
-            "name": "Fabric8 Docker",
-            "version": "1.2.0-SNAPSHOT",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.container",
-                "artifactid": "arquillian-fabric8-docker"
-              }
-            ]
-          },
-          {
-            "name": "Arquillian OSGi Karaf Managed",
-            "version": "2.1.0.CR16",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.container",
-                "artifactid": "arquillian-container-karaf-managed"
-              }
-            ]
-          },
-          {
-            "name": "Internal",
-            "version": "2.1.0.CR16",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.osgi",
-                "artifactid": "arquillian-osgi-bundle"
-              }
-            ]
-          },
-          {
-            "name": "Arquillian Tomcat Managed 7",
-            "version": "1.0.0.CR6",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.container",
-                "artifactid": "arquillian-tomcat-managed-7"
-              }
-            ]
-          },
-          {
-            "name": "WildFly Managed",
-            "version": "8.1.0.Final",
-            "artifacts": [
-              {
-                "groupid": "org.wildfly",
-                "artifactid": "wildfly-arquillian-container-managed"
-              }
-            ]
-          },
-          {
-            "name": "ShrinkWrap",
-            "version": "1.1.2",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.shrinkwrap",
-                "artifactid": "shrinkwrap-api"
-              },
-              {
-                "groupid": "org.jboss.shrinkwrap",
-                "artifactid": "shrinkwrap-impl-base"
-              }
-            ]
-          },
-          {
-            "name": "Gravia Embedded",
-            "version": "1.1.0.Beta40",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.gravia",
-                "artifactid": "gravia-arquillian-container-embedded"
-              }
-            ]
-          },
-          {
-            "name": "Arquillian Core Junit Standalone",
-            "version": "1.1.1.Final",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.arquillian.junit",
-                "artifactid": "arquillian-junit-standalone"
-              }
-            ]
-          },
-          {
-            "name": "ShrinkWrap Resolver",
-            "version": "2.0.0",
-            "artifacts": [
-              {
-                "groupid": "org.jboss.shrinkwrap.resolver",
-                "artifactid": "shrinkwrap-resolver-depchain"
-              },
-              {
-                "groupid": "org.jboss.shrinkwrap.resolver",
-                "artifactid": "shrinkwrap-resolver-impl-maven"
-              }
-            ]
-          }
-        ],
-        "sum": {
-          "runwith": 22,
-          "assertions": 275,
-          "deployments": 15,
-          "tests": 47,
-          "lines": 3619
-        }
-      }
-    ],
-    "sum": {
-      "runwith": 22,
-      "assertions": 275,
-      "deployments": 15,
-      "tests": 47,
-      "lines": 3619
-    }
-  },
-  {
     "name": "Searchisko",
     "repos": [
       {
@@ -4333,6 +4631,273 @@
       "deployments": 26,
       "tests": 77,
       "lines": 2707
+    }
+  },
+  {
+    "name": "Apache TomEE",
+    "repos": [
+      {
+        "name": "tomee",
+        "git": "git@github.com:apache/tomee.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core",
+            "version": "1.1.5.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.test",
+                "artifactid": "arquillian-test-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.config",
+                "artifactid": "arquillian-config-impl-base"
+              },
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-test-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.core",
+                "artifactid": "arquillian-core-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.testenricher",
+                "artifactid": "arquillian-testenricher-cdi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              },
+              {
+                "groupid": "org.jboss.arquillian.config",
+                "artifactid": "arquillian-config-api"
+              },
+              {
+                "groupid": "org.jboss.arquillian.core",
+                "artifactid": "arquillian-core-impl-base"
+              },
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Descriptors",
+            "version": "2.0.0-alpha-6",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-spi"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-api-base"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-impl-javaee"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-api-javaee"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": "1.1.5.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap",
+            "version": "1.1.2",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-api"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-impl-base"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-spi"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": "2.0.0",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-depchain"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-bom"
+              }
+            ]
+          },
+          {
+            "name": "Other",
+            "version": "2.0.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.apache.openejb",
+                "artifactid": "arquillian-common"
+              },
+              {
+                "groupid": "org.apache.openejb",
+                "artifactid": "arquillian-openejb-transaction-provider"
+              },
+              {
+                "groupid": "org.apache.openejb",
+                "artifactid": "arquillian-tomee-common"
+              },
+              {
+                "groupid": "${project.groupId}",
+                "artifactid": "arquillian-tomee-webapp-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Transaction",
+            "version": "1.0.0.Alpha3",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-transaction-impl-base"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian TCK",
+            "version": "1.1.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.arquillian.tck.container",
+                "artifactid": "arquillian-tck-container"
+              }
+            ]
+          },
+          {
+            "name": "TomEE Remote",
+            "version": "2.0.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.apache.openejb",
+                "artifactid": "arquillian-tomee-remote"
+              },
+              {
+                "groupid": "${project.groupId}",
+                "artifactid": "arquillian-tomee-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Drone",
+            "version": "1.3.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-selenium"
+              },
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-impl"
+              },
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-selenium-server"
+              }
+            ]
+          },
+          {
+            "name": "TomEE Embedded",
+            "version": "2.0.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.apache.openejb",
+                "artifactid": "arquillian-tomee-embedded"
+              },
+              {
+                "groupid": "${project.groupId}",
+                "artifactid": "arquillian-tomee-embedded"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Embedded 3.1",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-embedded-3.1"
+              }
+            ]
+          },
+          {
+            "name": "OpenEJB Embedded 5",
+            "version": "5.0.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.apache.openejb",
+                "artifactid": "arquillian-openejb-embedded-5"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Spock",
+            "version": "1.0.0.Beta3",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.spock",
+                "artifactid": "arquillian-spock-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core TestNG Container",
+            "version": "1.1.5.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.testng",
+                "artifactid": "arquillian-testng-container"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 113,
+          "assertions": 482,
+          "deployments": 115,
+          "tests": 238,
+          "lines": 10564
+        }
+      }
+    ],
+    "sum": {
+      "runwith": 113,
+      "assertions": 482,
+      "deployments": 115,
+      "tests": 238,
+      "lines": 10564
     }
   },
   {
