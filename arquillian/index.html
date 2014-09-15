@@ -164,16 +164,18 @@
             content += '<h2>' + project.name +'</h2>'
           content += '</div>'
         content += '<div class="row">'
-          content += '<div class="col-md-3">Classes</div>'
-          content += '<div class="col-md-3">Deployments</div>'
-          content += '<div class="col-md-3">Tests</div>'
-          content += '<div class="col-md-3">Assertions</div>'
+          content += '<div class="col-md-2">Classes</div>'
+          content += '<div class="col-md-2">Deployments</div>'
+          content += '<div class="col-md-2">Tests</div>'
+          content += '<div class="col-md-2">Assertions</div>'
+          content += '<div class="col-md-2">Lines</div>'
         content += '</div>'
         content += '<div class="row">'
-          content += '<div class="col-md-3">' + project.sum.runwith +'</div>'
-          content += '<div class="col-md-3">' + project.sum.deployments +'</div>'
-          content += '<div class="col-md-3">' + project.sum.tests +'</div>'
-          content += '<div class="col-md-3">' + project.sum.assertions +'</div>'
+          content += '<div class="col-md-2">' + project.sum.runwith +'</div>'
+          content += '<div class="col-md-2">' + project.sum.deployments +'</div>'
+          content += '<div class="col-md-2">' + project.sum.tests +'</div>'
+          content += '<div class="col-md-2">' + project.sum.assertions +'</div>'
+          content += '<div class="col-md-2">' + project.sum.lines +'</div>'
         content += '</div>'
       content += '</div>'
 
@@ -219,6 +221,8 @@
       content += '<dd>' + repo.sum.tests +'</dd>'
       content += '<dt>Assertions</dt>'
       content += '<dd class="right">' + repo.sum.assertions +'</dd>'
+      content += '<dt>Lines</dt>'
+      content += '<dd class="right">' + repo.sum.lines +'</dd>'
       content += '</dl>'
 
       content += '</div>'
@@ -271,25 +275,29 @@
     var deployments = 0;
     var tests = 0;
     var assertions = 0;
+    var lines = 0;
     data.forEach(function(project) {
       runwith += project.sum.runwith;
       deployments += project.sum.deployments;
       tests += project.sum.tests;
       assertions += project.sum.assertions;
+      lines += project.sum.lines;
     })
 
     var content = "";
     content += '<div class="row">'
-      content += '<div class="col-md-3">Classes</div>'
-      content += '<div class="col-md-3">Deployments</div>'
-      content += '<div class="col-md-3">Tests</div>'
-      content += '<div class="col-md-3">Assertions</div>'
+      content += '<div class="col-md-2">Classes</div>'
+      content += '<div class="col-md-2">Deployments</div>'
+      content += '<div class="col-md-2">Tests</div>'
+      content += '<div class="col-md-2">Assertions</div>'
+      content += '<div class="col-md-2">Lines</div>'
     content += '</div>'
     content += '<div class="row">'
-      content += '<div class="col-md-3">' + runwith +'</div>'
-      content += '<div class="col-md-3">' + deployments +'</div>'
-      content += '<div class="col-md-3">' + tests +'</div>'
-      content += '<div class="col-md-3">' + assertions +'</div>'
+      content += '<div class="col-md-2">' + runwith +'</div>'
+      content += '<div class="col-md-2">' + deployments +'</div>'
+      content += '<div class="col-md-2">' + tests +'</div>'
+      content += '<div class="col-md-2">' + assertions +'</div>'
+      content += '<div class="col-md-2">' + lines +'</div>'
     content += '</div>'
 
     $("#overview_sum").html(content)
