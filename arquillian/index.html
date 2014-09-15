@@ -42,11 +42,13 @@
     <div class="col-md-2" id="menu"></div>
     <div class="col-md-9" id="content">
       <div id="chart">
-                <div class="page-header">
+        <div class="page-header">
           <h1 class="panel-title">Arquillian Usage <small>within Red Hat JBoss</small></h1>
         </div>
         <div id="overview_sum">
           loading..
+        </div>
+        <div id="overview_chart">
         </div>
       </div>
       <div id="data"></div>
@@ -82,7 +84,7 @@
       }
       return unique;
   };
-  var create_overview_graph = function(set) {
+  var create_project_graph = function(set) {
     if(typeof window.$chart === "undefined") {
       window.$chart = new Highcharts.Chart({
           chart: {
@@ -130,7 +132,7 @@
       
     }
   }
-  var convert_overview_data = function(project) {
+  var convert_project_data = function(project) {
     var categories = ['Classes', 'Deployments', 'Tests', 'Assertions']
     
 
@@ -154,7 +156,7 @@
       data: totals
     }
   };
-  var create_overview = function(project) {
+  var create_project = function(project) {
     
     var content = "";
 
@@ -267,8 +269,8 @@
   }
   var display_project = function(name, data) {
     var filtered = filter_data(name, data);
-    create_overview_graph(convert_overview_data(filtered));
-    create_overview(filtered);
+    create_project_graph(convert_project_data(filtered));
+    create_project(filtered);
   }
   var display_overview = function(data) {
     var runwith = 0;
@@ -301,6 +303,54 @@
     content += '</div>'
 
     $("#overview_sum").html(content)
+
+    var project_data = new Array();
+    data.forEach(function(project) {
+      project_data.push([project.name, project.sum.lines])
+    })
+
+    new Highcharts.Chart({
+        chart: {
+            type: 'column',
+            backgroundColor: "#2a2a2b",
+            renderTo: "overview_chart"
+        },
+        credits: {
+          enabled: false
+        },
+        title: {
+            text: 'Overview'
+        },
+        xAxis: {
+          type: 'category',
+          labels: {
+            rotation: -45,
+          }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Lines'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+            }
+        },
+        series: [{
+          name: 'Lines',
+          data: project_data,
+          dataLabels: {
+            enabled: false,
+            rotation: -90,
+            x: 4,
+            y: 10,
+          }          
+        }]
+    })
   }
   var display_module_overview = function(target, type, data) {
     var content = '';
