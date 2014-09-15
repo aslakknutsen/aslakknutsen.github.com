@@ -7182,6 +7182,117 @@
     }
   },
   {
+    "name": "Seam2",
+    "repos": [
+      {
+        "name": "jboss-seam",
+        "git": "git@github.com:seam2/jboss-seam.git",
+        "dependencies": [
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": "2.1.1",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-bom"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-depchain"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.1.4.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              },
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Drone",
+            "version": "1.3.1.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-bom"
+              },
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-selenium-depchain"
+              },
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-webdriver-depchain"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Graphene",
+            "version": "2.0.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.graphene",
+                "artifactid": "graphene-webdriver"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "classes": 142,
+          "assertions": 2043,
+          "deployments": 141,
+          "tests": 366,
+          "lines": 22991
+        }
+      }
+    ],
+    "sum": {
+      "classes": 142,
+      "assertions": 2043,
+      "deployments": 141,
+      "tests": 366,
+      "lines": 22991
+    }
+  },
+  {
     "name": "Gravia",
     "repos": [
       {
