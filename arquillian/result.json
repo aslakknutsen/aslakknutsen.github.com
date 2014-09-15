@@ -2555,6 +2555,264 @@
         }
       },
       {
+        "name": "richfaces-qa",
+        "git": "https://github.com/richfaces/richfaces-qa.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Drone",
+            "version": "1.1.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-webdriver-depchain"
+              },
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-drone-bom"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core TestNG Container",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.testng",
+                "artifactid": "arquillian-testng-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Graphene",
+            "version": "2.0.0.Alpha5",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.graphene",
+                "artifactid": "graphene-webdriver"
+              },
+              {
+                "groupid": "org.jboss.arquillian.graphene",
+                "artifactid": "arquillian-graphene"
+              },
+              {
+                "groupid": "org.jboss.arquillian.graphene",
+                "artifactid": "graphene-selenium"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Descriptors",
+            "version": "2.0.0-alpha-6",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-impl-javaee"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-api-base"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-api"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-impl"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-api-jboss"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-impl-jboss"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-api-javaee"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-impl-base"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-gen"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.descriptors",
+                "artifactid": "shrinkwrap-descriptors-spi"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Drone Selenium",
+            "version": "2.35.0",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.selenium",
+                "artifactid": "selenium-bom"
+              }
+            ]
+          },
+          {
+            "name": "Other",
+            "version": "1.1.1",
+            "artifacts": [
+              {
+                "groupid": "org.eu.ingwar.tools",
+                "artifactid": "arquillian-suite-extension"
+              },
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-openshift-express"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.1.3.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Recorder",
+            "version": "2.1.0.Alpha1",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.graphene",
+                "artifactid": "arquillian-browser-screenshooter"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.1.5.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              },
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              }
+            ]
+          },
+          {
+            "name": "TomEE Remote",
+            "version": "1.6.0",
+            "artifacts": [
+              {
+                "groupid": "org.apache.openejb",
+                "artifactid": "arquillian-tomee-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Managed 3.1",
+            "version": "1.0.0.CR4",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-managed-3.1"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian GlassFish Remote 3.1",
+            "version": "1.0.0.CR4",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-glassfish-remote-3.1"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.0.2.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Managed",
+            "version": "8.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "WildFly Remote",
+            "version": "8.0.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.wildfly",
+                "artifactid": "wildfly-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Tomcat Managed 6",
+            "version": "1.0.0.CR7",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-tomcat-managed-6"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Tomcat Managed 7",
+            "version": "1.0.0.CR7",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-tomcat-managed-7"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Tomcat Remote 7",
+            "version": "1.0.0.CR7",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-tomcat-remote-7"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "runwith": 321,
+          "assertions": 6495,
+          "deployments": 20,
+          "tests": 2897
+        }
+      },
+      {
         "name": "richfaces-archetypes",
         "git": "git@github.com:richfaces/richfaces-archetypes.git",
         "dependencies": [
@@ -2569,10 +2827,10 @@
       }
     ],
     "sum": {
-      "runwith": 174,
-      "assertions": 957,
-      "deployments": 177,
-      "tests": 487
+      "runwith": 495,
+      "assertions": 7452,
+      "deployments": 197,
+      "tests": 3384
     }
   },
   {
