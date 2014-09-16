@@ -1588,14 +1588,191 @@
           "tests": 14,
           "lines": 628
         }
+      },
+      {
+        "name": "rhq",
+        "git": "git@github.com:rhq-project/rhq.git",
+        "dependencies": [
+          {
+            "name": "Arquillian Core Junit Container",
+            "version": null,
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.junit",
+                "artifactid": "arquillian-junit-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core",
+            "version": "1.0.4.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.protocol",
+                "artifactid": "arquillian-protocol-servlet"
+              },
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-test-impl-base"
+              },
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.core",
+                "artifactid": "arquillian-core-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian.container",
+                "artifactid": "arquillian-container-test-api"
+              },
+              {
+                "groupid": "org.jboss.arquillian.test",
+                "artifactid": "arquillian-test-spi"
+              },
+              {
+                "groupid": "org.jboss.arquillian",
+                "artifactid": "arquillian-bom"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Managed",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-managed"
+              }
+            ]
+          },
+          {
+            "name": "JBoss AS Remote",
+            "version": "7.2.0.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.as",
+                "artifactid": "jboss-as-arquillian-container-remote"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap",
+            "version": "4.13.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-api"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-impl-base"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap",
+                "artifactid": "shrinkwrap-spi"
+              },
+              {
+                "groupid": "org.rhq",
+                "artifactid": "rhq-shrinkwrap-agent-plugin-archive"
+              }
+            ]
+          },
+          {
+            "name": "ShrinkWrap Resolver",
+            "version": "2.0.0-alpha-7",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-impl-maven"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-depchain"
+              },
+              {
+                "groupid": "org.jboss.shrinkwrap.resolver",
+                "artifactid": "shrinkwrap-resolver-bom"
+              }
+            ]
+          },
+          {
+            "name": "Other",
+            "version": "4.13.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.rhq",
+                "artifactid": "rhq-arquillian-container-test-plugin"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Core TestNG Container",
+            "version": "1.0.4.Final",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.testng",
+                "artifactid": "arquillian-testng-container"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Suite",
+            "version": "4.13.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.rhq",
+                "artifactid": "rhq-arquillian-suite-extension"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian RHQ Plugin Embedded",
+            "version": "4.13.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.rhq",
+                "artifactid": "rhq-arquillian-agent-plugin-container-embedded"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian RHQ Cassandra",
+            "version": "4.13.0-SNAPSHOT",
+            "artifacts": [
+              {
+                "groupid": "org.rhq",
+                "artifactid": "rhq-cassandra-ccm-arquillian"
+              }
+            ]
+          },
+          {
+            "name": "Arquillian Jacoco",
+            "version": "1.0.0.Alpha5",
+            "artifacts": [
+              {
+                "groupid": "org.jboss.arquillian.extension",
+                "artifactid": "arquillian-jacoco"
+              }
+            ]
+          }
+        ],
+        "sum": {
+          "classes": 155,
+          "assertions": 7160,
+          "deployments": 178,
+          "tests": 903,
+          "lines": 105185
+        }
       }
     ],
     "sum": {
-      "classes": 1,
-      "assertions": 32,
-      "deployments": 1,
-      "tests": 14,
-      "lines": 628
+      "classes": 156,
+      "assertions": 7192,
+      "deployments": 179,
+      "tests": 917,
+      "lines": 105813
     }
   },
   {
