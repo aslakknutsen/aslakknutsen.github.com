@@ -31,10 +31,13 @@ source 'https://rubygems.org'
 
 
 #gem "awestruct", "0.4.9", :path => '/home/aslak/dev/source/testing/awestruct'
-gem "awestruct", "0.5.0"
+#gem "awestruct", "0.5.6.beta7"
+gem "awestruct"
+gem "puma"
 gem 'rb-inotify'
 
 gem "redcarpet"
+gem "RedCloth"
 gem 'therubyracer', '~> 0.10.0', :platforms => 'ruby'
 gem 'therubyrhino', '~> 1.73', :platforms => 'jruby'
 

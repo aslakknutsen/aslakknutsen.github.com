@@ -15,26 +15,24 @@
       %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
     %script{ :type=>'text/javascript', :src=>' https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js' }
   %body
-    %header.navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          .span3
-            %a.brand{ :href=>"/" } Aslak Knutsen
-          .span4.nav
-            &lt;
-            %a{:id=>"past", :class=>"hide"} Past
-          .span4.nav{:style=>"text-align:right"}
-            %a{:id=>"future", :class=>"hide"} Future
-            &gt;
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        .col-md-4
+          %a.navbar-brand{ :href=>"/" } Aslak Knutsen
+        .col-md-4.nav
+          &lt;
+          %a{:id=>"past"} Past
+        .col-md-4.nav{:style=>"text-align:right"}
+          %a{:id=>"future"} Future
+          &gt;
     .container
       ~ content
 
-    %footer.navbar.navbar-fixed-bottom
-      .navbar-inner
-        .container
-          .span3{:style=>"padding-top:5px"}
-            %a{:href=>"http://arquillian.org"}
-              %img{:src=>"/images/arquillian_icon_32px-glossy.png"}
+    %nav.navbar.navbar-default.navbar-fixed-bottom
+      .container-fluid
+        .col-md-3{:style=>"padding-top:5px"}
+          %a{:href=>"http://arquillian.org"}
+            %img{:src=>"/images/arquillian_icon_32px-glossy.png"}
 
     -# Uncomment script tags (remove leading -#) when you're ready to use behaviors
     -# %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/bootstrap-collapse.js" }
@@ -149,4 +147,4 @@
         })
 
     - if site.google_analytics
-      = google_analytics_async
+      = google_analytics

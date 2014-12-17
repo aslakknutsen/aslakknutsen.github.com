@@ -1,8 +1,9 @@
 interpolate: false
 profiles:
   production:
-    google_analytics: UA-38014373-1
-    base_url: http://aslakknutsen.github.com
+    google_analytics:
+      account: UA-38014373-1
+    base_url: http://aslakknutsen.github.io
     deploy:
       host: github_pages
       branch: master
